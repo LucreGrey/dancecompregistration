@@ -6,8 +6,7 @@ RUN mkdir /go/src/github.com/lucregrey/dancecompregistration/motownshowdown
 
 COPY *.go /go/src/github.com/lucregrey/dancecompregistration/
 COPY *.mod /go/src/github.com/lucregrey/dancecompregistration/
-COPY *.sum /go/src/github.com/lucregrey/dancecompregistration/
-COPY *.tpl /go/src/github.com/lucregrey/dancecompregistration/
+#COPY *.sum /go/src/github.com/lucregrey/dancecompregistration/
 
 COPY loginpage /go/src/github.com/lucregrey/dancecompregistration/loginpage
 COPY motownshowdown /go/src/github.com/lucregrey/dancecompregistration/motownshowdown
