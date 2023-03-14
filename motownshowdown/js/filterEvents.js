@@ -13,7 +13,7 @@ $(function filterEvents() {
     console.log(followStatus)
     $.ajax({
         url: "/api/getevents",
-        type: "GET",
+        type: "POST",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         data: JSON.stringify({"leadstatus": leadStatus, "followstatus": followStatus}),
