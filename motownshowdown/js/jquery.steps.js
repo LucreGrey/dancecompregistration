@@ -798,6 +798,10 @@ function paginationClickHandler(event)
             break;
 
         case "next":
+            console.log(state.currentIndex)
+            if (state.currentIndex == 0) {
+                filterEvents();
+            }
             goToNextStep(wizard, options, state);
             break;
 
