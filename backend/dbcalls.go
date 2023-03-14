@@ -36,17 +36,15 @@ func init() {
 
 func GetEvents(w http.ResponseWriter, r *http.Request) {
 	log.Println("Reached Get Events")
-	lStatus := r.URL.Query().Get("leadstatus")
-	fStatus := r.URL.Query().Get("followstatus")
-
-	// checks if the request is a "GET" request
-	if r.Method != "GET" {
-		http.Error(w, http.StatusText(405), http.StatusMethodNotAllowed)
-		return
+	decoder := json.NewDecoder(r.Body)
+	var req models.UpdateEvents
+	err := decoder.Decode(&req)
+	if err != nil {
+		log.Println("Failed to parse lead and follow statuses")
 	}
 
 	// We assign the result to 'rows'
-	var status = lStatus + fStatus
+	var status = req.LStatus + req.FStatus
 	if status == "ampro" {
 		status = "proam"
 	}
