@@ -42,19 +42,21 @@ func GetEvents(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Println("Failed to parse lead and follow statuses")
 	}
+	log.Println(req.LStatus)
 
 	// We assign the result to 'rows'
 	var status = req.LStatus + req.FStatus
 	if status == "ampro" {
 		status = "proam"
 	}
+	log.Println(status)
 
 	rows, err := db.Query("SELECT * FROM Events where dstatuses = '" + status + "';")
-
 	if err != nil {
 		http.Error(w, http.StatusText(500), http.StatusInternalServerError)
 		return
 	}
+	log.Println("Called DB")
 	defer rows.Close()
 
 	// creates placeholder of the sandbox
