@@ -2,6 +2,7 @@ package backend
 
 import (
 	"database/sql"
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
@@ -73,4 +74,7 @@ func GetEvents(w http.ResponseWriter, r *http.Request) {
 	for _, event := range allEvents {
 		fmt.Println(event.Name)
 	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(allEvents)
 }
