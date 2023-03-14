@@ -1,6 +1,6 @@
 package models
 
 type UpdateEvents struct {
-	LStatus string
-	FStatus string
+	LStatus string `json:"leadstatus"`
+	FStatus string `json:"followstatus"`
 }
