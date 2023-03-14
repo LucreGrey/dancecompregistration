@@ -17,7 +17,7 @@ var db *sql.DB
 func init() {
 	var err error
 
-	connStr := "postgres://golangdbconnect:danc3c0mp2022@192.168.4.110:5432/postgres?sslmode=disable"
+	connStr := "postgres://golangdbconnect:123456@192.168.4.110:5432/postgres?sslmode=disable"
 	db, err = sql.Open("postgres", connStr)
 
 	if err != nil {
