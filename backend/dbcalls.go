@@ -35,6 +35,7 @@ func init() {
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 func GetEvents(w http.ResponseWriter, r *http.Request) {
+	log.Println("Reached Get Events")
 	lStatus := r.URL.Query().Get("leadstatus")
 	fStatus := r.URL.Query().Get("followstatus")
 

@@ -1,4 +1,5 @@
 $(function filterEvents() {
+    console.log("Filter Events Called")
     var leadStatus
     var followStatus
     if (document.getElementById("leadPro").checked == true) {
@@ -7,6 +8,9 @@ $(function filterEvents() {
     if (document.getElementById("followPro").checked == true) {
         followStatus = "pro"
     } else {followStatus = "am"}
+    console.log("Lead and Follow Statuses:")
+    console.log(leadStatus)
+    console.log(followStatus)
     $.ajax({
         url: "/api/getevents",
         type: "GET",
@@ -14,6 +18,7 @@ $(function filterEvents() {
         dataType: "json",
         data: JSON.stringify({"leadstatus": leadStatus, "followstatus": followStatus}),
         complete: function(data,error) {
+            console.log("DB Called")
             if (error) {
                     console.log (error);
                 }
