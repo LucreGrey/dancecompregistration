@@ -50,7 +50,7 @@ func GetEvents(w http.ResponseWriter, r *http.Request) {
 		status = "proam"
 	}
 	log.Println(status)
-	query := "SELECT * FROM Events where dstatuses = '" + status + "';"
+	query := "SELECT * FROM Events where dstatuses = '" + status + "'"
 
 	rows, err := db.Query(query)
 	if err != nil {
