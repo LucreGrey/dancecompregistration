@@ -799,10 +799,6 @@ function paginationClickHandler(event)
 
         case "next":
             goToNextStep(wizard, options, state);
-            console.log("Next Selected:")
-            console.log(wizard)
-            console.log(options)
-            console.log(state)
             break;
 
         case "previous":

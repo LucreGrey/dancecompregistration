@@ -35,6 +35,9 @@ func init() {
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 func GetEvents(w http.ResponseWriter, r *http.Request) {
+	lStatus := r.URL.Query().Get("leadstatus")
+	fStatus := r.URL.Query().Get("followstatus")
+
 	// checks if the request is a "GET" request
 	if r.Method != "GET" {
 		http.Error(w, http.StatusText(405), http.StatusMethodNotAllowed)
@@ -42,7 +45,12 @@ func GetEvents(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// We assign the result to 'rows'
-	rows, err := db.Query("SELECT * FROM Events where dstatuses = 'amam';")
+	var status = lStatus + fStatus
+	if status == "ampro" {
+		status = "proam"
+	}
+
+	rows, err := db.Query("SELECT * FROM Events where dstatuses = '" + status + "';")
 
 	if err != nil {
 		http.Error(w, http.StatusText(500), http.StatusInternalServerError)
