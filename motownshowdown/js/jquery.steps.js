@@ -811,7 +811,7 @@ function paginationClickHandler(event)
     }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-$(function filterEvents() {
+function filterEvents() {
     console.log("Filter Events Called")
     var leadStatus
     var followStatus
@@ -860,7 +860,7 @@ $(function filterEvents() {
             }
         }
     });
-})
+}
 
 /**
  * Refreshs the visualization state for the entire pagination.
