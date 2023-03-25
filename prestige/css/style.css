@@ -201,13 +201,6 @@ p {
   color: white;
 }
 
-.price-column {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  width: 50;
-}
-
 .select {
   position: relative; }
   .select .select-control {
@@ -389,6 +382,10 @@ textarea.form-control {
   .checkbox-circle.mt-6 {
     margin-top: 6px; 
     width: 49%;}
+  .checkbox-circle.mt-7 {
+    margin-top: 6px;
+    width: 100%;
+  }
   .checkbox-circle label {
     cursor: pointer;
     color: #fff;
