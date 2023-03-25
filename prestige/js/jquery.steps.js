@@ -847,6 +847,7 @@ function filterEvents() {
                     if (i % 2 == 0) {$("#price-column").append('<div class="form-row"></div>')}
                     $("#price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
                 }
+                $("#events-column").append('<div class="button-placeholder"></div>')
             }
             else if (((leadStatus == "pro") && (followStatus == "am")) || ((leadStatus == "am") && (followStatus == "pro"))) {
                 $("#Events").append('<div class="events-column">')
