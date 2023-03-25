@@ -838,7 +838,31 @@ function filterEvents() {
             document.getElementById("events-column").innerHTML = "";
             document.getElementById("price-column").innerHTML = "";
             
+            var stylesList = ["Latin", "Ballroom", "Smooth", "Rhythm", "Showdance"]
+            
             if ((leadStatus == "pro") && (followStatus == "pro")) {
+                for (style in stylesList) {
+                    for (i in response) {
+                        var count = 0;
+                        $("#events-column").append('<div class="h2Other">' + style + '</div>')
+                        if (response[i].Style=style) {
+                            if (count % 2 == 0) {$("#events-column").append('<div class="form-row"></div>')}
+                            $("#events-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
+                            count++;
+                        }
+                    }
+    
+                    for (i in response) {
+                        var count2 = 0;
+                        if (response[i].Style=style) {
+                            if (count2 % 2 == 0) {$("#price-column").append('<div class="form-row"></div>')}
+                            $("#price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
+                        }
+                    }
+                }
+                $("#events-column").append('<div class="button-placeholder"></div>')
+            }
+            else if (((leadStatus == "pro") && (followStatus == "am")) || ((leadStatus == "am") && (followStatus == "pro"))) {
                 for (i in response) {
                     if (i % 2 == 0) {$("#events-column").append('<div class="form-row"></div>')}
                     $("#events-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
@@ -849,39 +873,17 @@ function filterEvents() {
                 }
                 $("#events-column").append('<div class="button-placeholder"></div>')
             }
-            else if (((leadStatus == "pro") && (followStatus == "am")) || ((leadStatus == "am") && (followStatus == "pro"))) {
-                $("#Events").append('<div class="events-column">')
-                for (i in response) {
-                    $("#Events").append('<div class="form-row">')
-                    $("#Events").append('<div class="checkbox-circle mt-6"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
-                    $("#Events").append('</div>')
-                }
-                $("#Events").append('</div>')
-                $("#Events").append('<div class="events-column">')
-                for (i in response) {
-                    if (i % 2 == 0) {$("#Events").append('<div class="form-row">')}
-                    $("#Events").append('<div><label>$ ' + response[i].Price + '</label></div>')
-                    if (i % 2 == 0) {$("#Events").append('</div>')}
-                }
-                $("#Events").append('</div>')
-            } 
             else {
-                $("#Events").append('<div class="events-column">')
                 for (i in response) {
-                    if (i % 3 == 0) {$("#Events").append('<div class="form-row">')}
-                    $("#Events").append('<div class="checkbox-circle mt-6"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
-                    if (i % 3 == 0) {$("#Events").append('</div>')}
+                    if (i % 3 == 0) {$("#events-column").append('<div class="form-row"></div>')}
+                    $("#events-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
                 }
-                $("#Events").append('</div>')
-                $("#Events").append('<div class="events-column">')
                 for (i in response) {
-                    if (i % 2 == 0) {$("#Events").append('<div class="form-row">')}
-                    $("#Events").append('<div><label>$ ' + response[i].Price + '</label></div>')
-                    if (i % 2 == 0) {$("#Events").append('</div>')}
+                    if (i % 3 == 0) {$("#price-column").append('<div class="form-row"></div>')}
+                    $("#price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
                 }
-                $("#Events").append('</div>')
+                $("#events-column").append('<div class="button-placeholder"></div>')
             }
-            
         }
     });
 }
