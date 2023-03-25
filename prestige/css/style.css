@@ -203,11 +203,6 @@ p {
   float: left;
 }
 
-.price-margin {
-  padding: 8px;
-  margin-top: 6px;
-}
-
 .select {
   position: relative; }
   .select .select-control {
@@ -521,7 +516,10 @@ textarea.form-control {
     padding: 5px 5px;
     display: inline-block;
     border: 1px solid #dad8e4;}
+}
 
+.button-placeholder {
+  height: 250px;
 }
 
 @media (max-width: 362px) {
@@ -538,7 +536,6 @@ textarea.form-control {
     padding: 0px;
     display: inline-block;
     border: 1px solid #dad8e4;}
-
 }
 
 

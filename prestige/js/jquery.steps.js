@@ -842,12 +842,10 @@ function filterEvents() {
                 for (i in response) {
                     if (i % 2 == 0) {$("#events-column").append('<div class="form-row"></div>')}
                     $("#events-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
-                    //if (i % 2 == 0) {$("#Events").append('</div>')}
                 }
                 for (i in response) {
                     if (i % 2 == 0) {$("#price-column").append('<div class="form-row"></div>')}
                     $("#price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
-                    //if (i % 2 == 0) {$("#price-column").append('</div>')}
                 }
             }
             else if (((leadStatus == "pro") && (followStatus == "am")) || ((leadStatus == "am") && (followStatus == "pro"))) {
