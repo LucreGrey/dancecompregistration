@@ -837,14 +837,14 @@ function filterEvents() {
             console.log(response)
             document.getElementById("events-column").innerHTML = "";
             document.getElementById("price-column").innerHTML = "";
-            
+
             var stylesList = ["Latin", "Ballroom", "Smooth", "Rhythm", "Showdance"]
             
             if ((leadStatus == "pro") && (followStatus == "pro")) {
                 for (style in stylesList) {
+                    $("#events-column").append('<div class="h2Other">' + stylesList[style] + '</div>')
                     for (i in response) {
                         var count = 0;
-                        $("#events-column").append('<div class="h2Other">' + style + '</div>')
                         if (response[i].Style=style) {
                             if (count % 2 == 0) {$("#events-column").append('<div class="form-row"></div>')}
                             $("#events-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
