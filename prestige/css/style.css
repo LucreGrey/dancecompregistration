@@ -197,7 +197,6 @@ p {
 }
 
 .price-column {
-  margin-left: 20px;
   color: white;
   flex-direction: column;
   display: flex;
