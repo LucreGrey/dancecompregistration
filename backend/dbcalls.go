@@ -70,14 +70,11 @@ func GetEvents(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 	defer db.Close()
-	query := "SELECT * FROM events"
-	log.Println(query)
 
-	rows, err := db.Query(query)
+	rows, err := db.Query("SELECT * FROM events")
 	if err != nil {
 		log.Println("There was an error querying the db")
-		http.Error(w, http.StatusText(500), http.StatusInternalServerError)
-		return
+		log.Println(err)
 	}
 	log.Println("Called DB")
 	defer rows.Close()
