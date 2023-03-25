@@ -191,12 +191,12 @@ p {
 }
 
 .events-column {
-  width: 50%;
+  display: flex;
 }
 
 .price-column {
   color: white;
-  width: 50%;
+  display: flex;
 }
 
 .select {
