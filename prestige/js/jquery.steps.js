@@ -845,13 +845,13 @@ function filterEvents() {
                     var count = 0;
                     for (i in response) {
                         if (count == 0) {
-                            $("#events-column").append('<div class="h2Other">' + stylesList[style] + ':</div>')
+                            $("#events-column").append('<div class="h2Other">' + stylesList[style] + '</div>')
                         }
                         if (response[i].Style==stylesList[style]) {
                             if (count % 2 == 0) {$("#events-column").append('<div class="form-row"></div>')}
                             $("#events-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
-                            count++;
                         }
+                        count++;
                     }
 
                     var count2 = 0;
@@ -860,10 +860,10 @@ function filterEvents() {
                             $("#price-column").append('<div class="h2Other"></div>')
                         }
                         if (response[i].Style==stylesList[style]) {
-                            if (count2 % 2 == 0) {$("#price-column").append('<div class="form-row"></div>')}
+                            if (count2 % 2 == 0) {$("#price-column").append('<div class="form-row">Entry Fee</div>')}
                             $("#price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
-                            count2++;
                         }
+                        count2++;
                     }
                 }
                 $("#events-column").append('<div class="button-placeholder"></div>')
