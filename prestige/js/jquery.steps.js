@@ -842,7 +842,7 @@ function filterEvents() {
                 if ((leadStatus == true) && (followStatus == true)) {
                     for (i in response) {
                         if (i % 2 == 0) {$("#Events").append('<div class="form-row">')}
-                        $("#Events").append('<div class="checkbox-circle mt-6"><label><input type="checkbox" id="' + data[i].Name + '">  ' + data[i].Name + '</a><span class="checkmark"></span></label></div>')
+                        $("#Events").append('<div class="checkbox-circle mt-6"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
                         if (i % 2 == 0) {$("#Events").append('</div>')}
                     }
                 }
