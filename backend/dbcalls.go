@@ -71,7 +71,7 @@ func GetEvents(w http.ResponseWriter, r *http.Request) {
 	}
 	defer db.Close()
 
-	rows, err := db.Query("SELECT * FROM events WHERE dstatuses = 'amam'")
+	rows, err := db.Query("SELECT * FROM events WHERE dstatuses = '$1'", status)
 	if err != nil {
 		log.Println("There was an error querying the db")
 		log.Println(err)
