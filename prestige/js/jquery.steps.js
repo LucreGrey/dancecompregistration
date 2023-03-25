@@ -1005,7 +1005,7 @@ function filterEvents() {
                             for (i in response) {
                                 if (count2 == 0) {
                                     $("#srs-price-column").append('<div class="h2Other">Price</div>')
-                                    $("#srs-price-column").append('<div class="form-row"></div>')}
+                                    $("#srs-price-column").append('<div class="form-row"></div>')
                                 }
                                 if (response[i].Style==stylesList[style]) {
                                     $("#srs-price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
