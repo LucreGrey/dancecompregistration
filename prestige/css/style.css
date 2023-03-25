@@ -110,7 +110,6 @@ img {
   height: 100%; }
 
 .inner {
-  margin-bottom: 150px;
   display: flex;
   background: rgba(0, 0, 0, .9);
   box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.2);
