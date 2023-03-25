@@ -51,7 +51,8 @@ img {
 
 .wizard {
   width: 90%;
-  position: absolute; }
+  position: absolute; 
+  margin-bottom: 150px;}
 
 .wizard > .steps {
   position: absolute;
