@@ -33,7 +33,6 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	defer db.Close()
 
 	if err = db.Ping(); err != nil {
 		panic(err)
@@ -60,6 +59,17 @@ func GetEvents(w http.ResponseWriter, r *http.Request) {
 		status = "proam"
 	}
 	log.Println(status)
+
+	// Open the db
+	connStr := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
+		host, port, user, password, dbname)
+
+	// Open a connection to the database
+	db, err := sql.Open("postgres", connStr)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer db.Close()
 	query := "SELECT * FROM events"
 	log.Println(query)
 
