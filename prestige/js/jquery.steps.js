@@ -846,7 +846,7 @@ function filterEvents() {
                 }
                 for (i in response) {
                     if (i % 2 == 0) {$("#price-column").append('<div class="form-row"></div>')}
-                    $("#price-column").append('<div class="price-margin"><label>$ ' + response[i].Price + '</label></div>')
+                    $("#price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
                     //if (i % 2 == 0) {$("#price-column").append('</div>')}
                 }
             }
