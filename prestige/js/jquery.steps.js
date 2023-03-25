@@ -847,7 +847,7 @@ function filterEvents() {
                         var count = 0;
                         console.log(response[i].Style)
                         console.log(stylesList[style])
-                        if (response[i].Style=stylesList[style]) {
+                        if (response[i].Style==stylesList[style]) {
                             if (count % 2 == 0) {$("#events-column").append('<div class="form-row"></div>')}
                             $("#events-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
                             count++;
@@ -856,7 +856,7 @@ function filterEvents() {
     
                     for (i in response) {
                         var count2 = 0;
-                        if (response[i].Style=stylesList[style]) {
+                        if (response[i].Style==stylesList[style]) {
                             if (count2 % 2 == 0) {$("#price-column").append('<div class="form-row"></div>')}
                             $("#price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
                         }
