@@ -193,7 +193,6 @@ p {
 .events-column {
   flex-direction: column;
   display: flex;
-  width: 50%;
   float: left;
 }
 
@@ -201,8 +200,11 @@ p {
   color: white;
   flex-direction: column;
   display: flex;
-  width: 50%;
   float: left;
+}
+
+.price {
+  margin-top: 6px;
 }
 
 .select {
