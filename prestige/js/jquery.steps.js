@@ -839,26 +839,52 @@ function filterEvents() {
             console.log(followStatus)
             document.getElementById("Events").innerHTML = "";
             if ((leadStatus == "pro") && (followStatus == "pro")) {
-                console.log("PRO PRO REACHED")
+                $("#Events").append('<div class="events-column">')
                 for (i in response) {
                     if (i % 2 == 0) {$("#Events").append('<div class="form-row">')}
                     $("#Events").append('<div class="checkbox-circle mt-6"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
                     if (i % 2 == 0) {$("#Events").append('</div>')}
                 }
+                $("#Events").append('</div>')
+                $("#Events").append('<div class="events-column">')
+                for (i in response) {
+                    if (i % 2 == 0) {$("#Events").append('<div class="form-row">')}
+                    $("#Events").append('<div><label>$ ' + response[i].Price + '</label></div>')
+                    if (i % 2 == 0) {$("#Events").append('</div>')}
+                }
+                $("#Events").append('</div>')
             }
             else if (((leadStatus == "pro") && (followStatus == "am")) || ((leadStatus == "am") && (followStatus == "pro"))) {
+                $("#Events").append('<div class="events-column">')
                 for (i in response) {
                     $("#Events").append('<div class="form-row">')
                     $("#Events").append('<div class="checkbox-circle mt-6"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
                     $("#Events").append('</div>')
                 }
+                $("#Events").append('</div>')
+                $("#Events").append('<div class="events-column">')
+                for (i in response) {
+                    if (i % 2 == 0) {$("#Events").append('<div class="form-row">')}
+                    $("#Events").append('<div><label>$ ' + response[i].Price + '</label></div>')
+                    if (i % 2 == 0) {$("#Events").append('</div>')}
+                }
+                $("#Events").append('</div>')
             } 
             else {
+                $("#Events").append('<div class="events-column">')
                 for (i in response) {
                     if (i % 3 == 0) {$("#Events").append('<div class="form-row">')}
                     $("#Events").append('<div class="checkbox-circle mt-6"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
                     if (i % 3 == 0) {$("#Events").append('</div>')}
                 }
+                $("#Events").append('</div>')
+                $("#Events").append('<div class="events-column">')
+                for (i in response) {
+                    if (i % 2 == 0) {$("#Events").append('<div class="form-row">')}
+                    $("#Events").append('<div><label>$ ' + response[i].Price + '</label></div>')
+                    if (i % 2 == 0) {$("#Events").append('</div>')}
+                }
+                $("#Events").append('</div>')
             }
             
         }

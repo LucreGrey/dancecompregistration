@@ -12,6 +12,7 @@ type Event struct {
 	DStatuses string
 	Name      string
 	Age       string
+	Price     int
 }
 
 type Competitor struct {

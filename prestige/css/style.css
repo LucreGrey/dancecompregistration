@@ -190,6 +190,10 @@ p {
   width: 70%;
 }
 
+.events-column {
+  width: 50%;
+}
+
 .select {
   position: relative; }
   .select .select-control {
