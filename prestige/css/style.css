@@ -194,6 +194,11 @@ p {
   width: 50%;
 }
 
+.price-column {
+  color: white;
+  width: 50%;
+}
+
 .select {
   position: relative; }
   .select .select-control {

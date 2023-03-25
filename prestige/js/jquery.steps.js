@@ -835,24 +835,20 @@ function filterEvents() {
             console.log(data)
             var response = JSON.parse(data.responseText)
             console.log(response)
-            console.log(leadStatus)
-            console.log(followStatus)
-            document.getElementById("Events").innerHTML = "";
+            document.getElementById("events-column").innerHTML = "";
+            document.getElementById("price-column").innerHTML = "";
+            
             if ((leadStatus == "pro") && (followStatus == "pro")) {
-                $("#Events").append('<div class="events-column">')
                 for (i in response) {
-                    if (i % 2 == 0) {$("#Events").append('<div class="form-row">')}
+                    if (i % 2 == 0) {$("#events-column").append('<div class="form-row"></div>')}
                     $("#Events").append('<div class="checkbox-circle mt-6"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
-                    if (i % 2 == 0) {$("#Events").append('</div>')}
+                    //if (i % 2 == 0) {$("#Events").append('</div>')}
                 }
-                $("#Events").append('</div>')
-                $("#Events").append('<div class="events-column">')
                 for (i in response) {
-                    if (i % 2 == 0) {$("#Events").append('<div class="form-row">')}
-                    $("#Events").append('<div><label>$ ' + response[i].Price + '</label></div>')
-                    if (i % 2 == 0) {$("#Events").append('</div>')}
+                    if (i % 2 == 0) {$("#price-column").append('<div class="form-row"></div>')}
+                    $("#price-column").append('<div><label>$ ' + response[i].Price + '</label></div>')
+                    //if (i % 2 == 0) {$("#price-column").append('</div>')}
                 }
-                $("#Events").append('</div>')
             }
             else if (((leadStatus == "pro") && (followStatus == "am")) || ((leadStatus == "am") && (followStatus == "pro"))) {
                 $("#Events").append('<div class="events-column">')
