@@ -835,8 +835,11 @@ function filterEvents() {
             console.log(data)
             var response = JSON.parse(data.responseText)
             console.log(response)
-            document.getElementById("events-column").innerHTML = "";
-            document.getElementById("price-column").innerHTML = "";
+            document.getElementById("lbn-column").innerHTML = "";
+            document.getElementById("lbn-price-column").innerHTML = "";
+            document.getElementById("srs-column").innerHTML = "";
+            document.getElementById("srs-price-column").innerHTML = "";
+
 
             var stylesList = ["Latin", "Ballroom", "Smooth", "Rhythm", "Showdance"]
             
