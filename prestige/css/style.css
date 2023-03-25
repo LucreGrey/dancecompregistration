@@ -194,11 +194,15 @@ p {
   flex-direction: column;
   display: flex;
   width: 50%;
+  float: left;
 }
 
-.price {
-  text-align: right;
+.price-column {
   color: white;
+  flex-direction: column;
+  display: flex;
+  width: 50%;
+  float: left;
 }
 
 .select {
