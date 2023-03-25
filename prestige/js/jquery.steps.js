@@ -837,6 +837,7 @@ function filterEvents() {
             console.log(response)
             console.log(leadStatus)
             console.log(followStatus)
+            document.getElementById("Events").outerHTML = "";
             if ((leadStatus == "pro") && (followStatus == "pro")) {
                 console.log("PRO PRO REACHED")
                 for (i in response) {
