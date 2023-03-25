@@ -833,7 +833,7 @@ function filterEvents() {
         complete: function(data,error) {
             console.log("DB Called")
             console.log(data)
-            var response = JSON.parse(data)
+            var response = JSON.parse(data.responseText)
             console.log(response)
             if (error) {
                     console.log (error);
