@@ -839,7 +839,9 @@ function filterEvents() {
                     console.log (error);
                 }
             else {
+                console.log("ELSE STATEMENT REACHED")
                 if ((leadStatus == true) && (followStatus == true)) {
+                    console.log("PRO PRO REACHED")
                     for (i in response) {
                         if (i % 2 == 0) {$("#Events").append('<div class="form-row">')}
                         $("#Events").append('<div class="checkbox-circle mt-6"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
