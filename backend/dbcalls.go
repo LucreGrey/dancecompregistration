@@ -71,7 +71,7 @@ func GetEvents(w http.ResponseWriter, r *http.Request) {
 	}
 	defer db.Close()
 
-	rows, err := db.Query("SELECT * FROM events")
+	rows, err := db.Query("SELECT * FROM events WHERE dstatuses = 'amam'")
 	if err != nil {
 		log.Println("There was an error querying the db")
 		log.Println(err)
@@ -85,7 +85,7 @@ func GetEvents(w http.ResponseWriter, r *http.Request) {
 	// we loop through the values of rows
 	for rows.Next() {
 		event := models.Event{}
-		err := rows.Scan(&event.Name)
+		err := rows.Scan(&event.Id, &event.CompId, &event.DStatuses, &event.Name)
 		if err != nil {
 			log.Println(err)
 			http.Error(w, http.StatusText(500), 500)
