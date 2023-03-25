@@ -832,6 +832,7 @@ function filterEvents() {
         data: JSON.stringify({"leadstatus": leadStatus, "followstatus": followStatus}),
         complete: function(data,error) {
             console.log("DB Called")
+            console.log(data)
             if (error) {
                     console.log (error);
                 }
