@@ -856,8 +856,8 @@ function filterEvents() {
 
                     var count2 = 0;
                     for (i in response) {
-                        if (count == 0) {
-                            $("#events-column").append('<div class="h2Other"></div>')
+                        if (count2 == 0) {
+                            $("#price-column").append('<div class="h2Other"></div>')
                         }
                         if (response[i].Style==stylesList[style]) {
                             if (count2 % 2 == 0) {$("#price-column").append('<div class="form-row"></div>')}
