@@ -842,23 +842,27 @@ function filterEvents() {
             
             if ((leadStatus == "pro") && (followStatus == "pro")) {
                 for (style in stylesList) {
-                    $("#Events").append('<div class="h2Other">' + stylesList[style] + '</div>')
+                    var count = 0;
                     for (i in response) {
-                        var count = 0;
-                        console.log(response[i].Style)
-                        console.log(stylesList[style])
+                        if (count == 0) {
+                            $("#events-column").append('<div class="h2Other">' + stylesList[style] + ':</div>')
+                        }
                         if (response[i].Style==stylesList[style]) {
                             if (count % 2 == 0) {$("#events-column").append('<div class="form-row"></div>')}
                             $("#events-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
                             count++;
                         }
                     }
-    
+
+                    var count2 = 0;
                     for (i in response) {
-                        var count2 = 0;
+                        if (count == 0) {
+                            $("#events-column").append('<div class="h2Other"></div>')
+                        }
                         if (response[i].Style==stylesList[style]) {
                             if (count2 % 2 == 0) {$("#price-column").append('<div class="form-row"></div>')}
                             $("#price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
+                            count2++;
                         }
                     }
                 }
