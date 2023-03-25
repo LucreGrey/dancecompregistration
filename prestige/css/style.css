@@ -194,6 +194,16 @@ p {
   height: 50px;
 }
 
+.latin-ballroom-nightclub {
+  width: 50%;
+  float: left;
+}
+
+.smooth-rhythm-showdance {
+  width: 50%;
+  float: left;
+}
+
 .events-column {
   flex-direction: column;
   display: flex;

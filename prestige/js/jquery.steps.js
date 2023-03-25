@@ -842,29 +842,57 @@ function filterEvents() {
             
             if ((leadStatus == "pro") && (followStatus == "pro")) {
                 for (style in stylesList) {
-                    if (response.some(e => e.Style == stylesList[style])) {
-                        var count = 0;
-                        for (i in response) {
-                            if (count == 0) {
-                                $("#events-column").append('<div class="h2Other">' + stylesList[style] + '</div>')
+                    if (stylesList[style] == "Latin" || stylesList[style] == "Ballroom" || stylesList[style] == "Nightclub") {
+                        if (response.some(e => e.Style == stylesList[style])) {
+                            var count = 0;
+                            for (i in response) {
+                                if (count == 0) {
+                                    $("#lbn-column").append('<div class="h2Other">' + stylesList[style] + '</div>')
+                                }
+                                if (response[i].Style==stylesList[style]) {
+                                    if (count % 2 == 0) {$("#lbn-column").append('<div class="form-row"></div>')}
+                                    $("#lbn-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
+                                }
+                                count++;
                             }
-                            if (response[i].Style==stylesList[style]) {
-                                if (count % 2 == 0) {$("#events-column").append('<div class="form-row"></div>')}
-                                $("#events-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
-                            }
-                            count++;
-                        }
 
-                        var count2 = 0;
-                        for (i in response) {
-                            if (count2 == 0) {
-                                $("#price-column").append('<div class="h2Other">Price</div>')
+                            var count2 = 0;
+                            for (i in response) {
+                                if (count2 == 0) {
+                                    $("#lbn-price-column").append('<div class="h2Other">Price</div>')
+                                }
+                                if (response[i].Style==stylesList[style]) {
+                                    if (count2 % 2 == 0) {$("#lbn-price-column").append('<div class="form-row"></div>')}
+                                    $("#lbn-price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
+                                }
+                                count2++;
                             }
-                            if (response[i].Style==stylesList[style]) {
-                                if (count2 % 2 == 0) {$("#price-column").append('<div class="form-row"></div>')}
-                                $("#price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
+                        }
+                    } else {
+                        if (response.some(e => e.Style == stylesList[style])) {
+                            var count = 0;
+                            for (i in response) {
+                                if (count == 0) {
+                                    $("#srs-column").append('<div class="h2Other">' + stylesList[style] + '</div>')
+                                }
+                                if (response[i].Style==stylesList[style]) {
+                                    if (count % 2 == 0) {$("#srs-column").append('<div class="form-row"></div>')}
+                                    $("#srs-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
+                                }
+                                count++;
                             }
-                            count2++;
+
+                            var count2 = 0;
+                            for (i in response) {
+                                if (count2 == 0) {
+                                    $("#srs-price-column").append('<div class="h2Other">Price</div>')
+                                }
+                                if (response[i].Style==stylesList[style]) {
+                                    if (count2 % 2 == 0) {$("#srs-price-column").append('<div class="form-row"></div>')}
+                                    $("#srs-price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
+                                }
+                                count2++;
+                            }
                         }
                     }
                 }
