@@ -14,11 +14,20 @@ import (
 
 var db *sql.DB
 
+const (
+	host     = "192.168.4.110"
+	port     = 5432
+	user     = "golangdbconnect"
+	password = "12345"
+	dbname   = "postgres"
+)
+
 // This function will make a connection to the database only once.
 func init() {
 	var err error
-
-	connStr := "postgres://golangdbconnect:123456@192.168.4.110:5432/postgres?sslmode=disable"
+	connStr := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
+		host, port, user, password, dbname)
+	//connStr := "postgres://golangdbconnect:123456@192.168.4.110:5432/postgres?sslmode=disable"
 	db, err = sql.Open("postgres", connStr)
 
 	if err != nil {
