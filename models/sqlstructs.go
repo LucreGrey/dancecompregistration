@@ -11,6 +11,7 @@ type Event struct {
 	CompId    int
 	DStatuses string
 	Name      string
+	Age       string
 }
 
 type Competitor struct {
