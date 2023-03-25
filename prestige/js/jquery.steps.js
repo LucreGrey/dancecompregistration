@@ -841,7 +841,7 @@ function filterEvents() {
             if ((leadStatus == "pro") && (followStatus == "pro")) {
                 for (i in response) {
                     if (i % 2 == 0) {$("#events-column").append('<div class="form-row"></div>')}
-                    $("#events-column").append('<div class="checkbox-circle mt-6"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
+                    $("#events-column").append('<div class="checkbox-circle mt-6"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label><label class="price">' + response[i].Price + '</label></div>')
                     //if (i % 2 == 0) {$("#Events").append('</div>')}
                 }
                 for (i in response) {

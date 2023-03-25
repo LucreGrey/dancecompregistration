@@ -196,6 +196,11 @@ p {
   width: 50%;
 }
 
+.price {
+  text-align: right;
+  color: white;
+}
+
 .price-column {
   color: white;
   display: flex;
