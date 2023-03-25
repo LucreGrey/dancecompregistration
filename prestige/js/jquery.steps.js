@@ -851,9 +851,9 @@ function filterEvents() {
                             for (i in response) {
                                 if (count == 0) {
                                     $("#lbn-column").append('<div class="h2Other">' + stylesList[style] + '</div>')
+                                    $("#lbn-column").append('<div class="form-row"></div>')
                                 }
                                 if (response[i].Style==stylesList[style]) {
-                                    if (count % 2 == 0) {$("#lbn-column").append('<div class="form-row"></div>')}
                                     $("#lbn-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
                                 }
                                 count++;
@@ -863,9 +863,9 @@ function filterEvents() {
                             for (i in response) {
                                 if (count2 == 0) {
                                     $("#lbn-price-column").append('<div class="h2Other">Price</div>')
+                                    $("#lbn-price-column").append('<div class="form-row"></div>')
                                 }
                                 if (response[i].Style==stylesList[style]) {
-                                    if (count2 % 2 == 0) {$("#lbn-price-column").append('<div class="form-row"></div>')}
                                     $("#lbn-price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
                                 }
                                 count2++;
@@ -877,9 +877,9 @@ function filterEvents() {
                             for (i in response) {
                                 if (count == 0) {
                                     $("#srs-column").append('<div class="h2Other">' + stylesList[style] + '</div>')
+                                    $("#srs-column").append('<div class="form-row"></div>')
                                 }
                                 if (response[i].Style==stylesList[style]) {
-                                    if (count % 2 == 0) {$("#srs-column").append('<div class="form-row"></div>')}
                                     $("#srs-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
                                 }
                                 count++;
@@ -889,9 +889,9 @@ function filterEvents() {
                             for (i in response) {
                                 if (count2 == 0) {
                                     $("#srs-price-column").append('<div class="h2Other">Price</div>')
+                                    $("#srs-price-column").append('<div class="form-row"></div>')
                                 }
                                 if (response[i].Style==stylesList[style]) {
-                                    if (count2 % 2 == 0) {$("#srs-price-column").append('<div class="form-row"></div>')}
                                     $("#srs-price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
                                 }
                                 count2++;
@@ -902,24 +902,118 @@ function filterEvents() {
                 $("#events-column").append('<div class="button-placeholder"></div>')
             }
             else if (((leadStatus == "pro") && (followStatus == "am")) || ((leadStatus == "am") && (followStatus == "pro"))) {
-                for (i in response) {
-                    if (i % 2 == 0) {$("#events-column").append('<div class="form-row"></div>')}
-                    $("#events-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
-                }
-                for (i in response) {
-                    if (i % 2 == 0) {$("#price-column").append('<div class="form-row"></div>')}
-                    $("#price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
+                for (style in stylesList) {
+                    if (stylesList[style] == "Latin" || stylesList[style] == "Ballroom" || stylesList[style] == "Nightclub") {
+                        if (response.some(e => e.Style == stylesList[style])) {
+                            var count = 0;
+                            for (i in response) {
+                                if (count == 0) {
+                                    $("#lbn-column").append('<div class="h2Other">' + stylesList[style] + '</div>')
+                                    $("#lbn-column").append('<div class="form-row"></div>')
+                                }
+                                if (response[i].Style==stylesList[style]) {
+                                    $("#lbn-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
+                                }
+                                count++;
+                            }
+
+                            var count2 = 0;
+                            for (i in response) {
+                                if (count2 == 0) {
+                                    $("#lbn-price-column").append('<div class="h2Other">Price</div>')
+                                    $("#lbn-price-column").append('<div class="form-row"></div>')
+                                }
+                                if (response[i].Style==stylesList[style]) {
+                                    $("#lbn-price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
+                                }
+                                count2++;
+                            }
+                        }
+                    } else {
+                        if (response.some(e => e.Style == stylesList[style])) {
+                            var count = 0;
+                            for (i in response) {
+                                if (count == 0) {
+                                    $("#srs-column").append('<div class="h2Other">' + stylesList[style] + '</div>')
+                                    $("#srs-column").append('<div class="form-row"></div>')
+                                }
+                                if (response[i].Style==stylesList[style]) {
+                                    $("#srs-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
+                                }
+                                count++;
+                            }
+
+                            var count2 = 0;
+                            for (i in response) {
+                                if (count2 == 0) {
+                                    $("#srs-price-column").append('<div class="h2Other">Price</div>')
+                                    $("#srs-price-column").append('<div class="form-row"></div>')
+                                }
+                                if (response[i].Style==stylesList[style]) {
+                                    $("#srs-price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
+                                }
+                                count2++;
+                            }
+                        }
+                    }
                 }
                 $("#events-column").append('<div class="button-placeholder"></div>')
             }
             else {
-                for (i in response) {
-                    if (i % 3 == 0) {$("#events-column").append('<div class="form-row"></div>')}
-                    $("#events-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
-                }
-                for (i in response) {
-                    if (i % 3 == 0) {$("#price-column").append('<div class="form-row"></div>')}
-                    $("#price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
+                for (style in stylesList) {
+                    if (stylesList[style] == "Latin" || stylesList[style] == "Ballroom" || stylesList[style] == "Nightclub") {
+                        if (response.some(e => e.Style == stylesList[style])) {
+                            var count = 0;
+                            for (i in response) {
+                                if (count == 0) {
+                                    $("#lbn-column").append('<div class="h2Other">' + stylesList[style] + '</div>')
+                                    $("#lbn-column").append('<div class="form-row"></div>')
+                                }
+                                if (response[i].Style==stylesList[style]) {
+                                    $("#lbn-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
+                                }
+                                count++;
+                            }
+
+                            var count2 = 0;
+                            for (i in response) {
+                                if (count2 == 0) {
+                                    $("#lbn-price-column").append('<div class="h2Other">Price</div>')
+                                    $("#lbn-price-column").append('<div class="form-row"></div>')
+                                }
+                                if (response[i].Style==stylesList[style]) {
+                                    $("#lbn-price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
+                                }
+                                count2++;
+                            }
+                        }
+                    } else {
+                        if (response.some(e => e.Style == stylesList[style])) {
+                            var count = 0;
+                            for (i in response) {
+                                if (count == 0) {
+                                    $("#srs-column").append('<div class="h2Other">' + stylesList[style] + '</div>')
+                                    $("#srs-column").append('<div class="form-row"></div>')
+                                }
+                                if (response[i].Style==stylesList[style]) {
+                                    $("#srs-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
+                                }
+                                count++;
+                            }
+
+                            var count2 = 0;
+                            for (i in response) {
+                                if (count2 == 0) {
+                                    $("#srs-price-column").append('<div class="h2Other">Price</div>')
+                                    $("#srs-price-column").append('<div class="form-row"></div>')}
+                                }
+                                if (response[i].Style==stylesList[style]) {
+                                    $("#srs-price-column").append('<div class="checkbox-circle mt-7"><label>$ ' + response[i].Price + '</label></div>')
+                                }
+                                count2++;
+                            }
+                        }
+                    }
                 }
                 $("#events-column").append('<div class="button-placeholder"></div>')
             }
