@@ -33,6 +33,7 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
+	defer db.Close()
 
 	if err = db.Ping(); err != nil {
 		panic(err)
@@ -59,7 +60,7 @@ func GetEvents(w http.ResponseWriter, r *http.Request) {
 		status = "proam"
 	}
 	log.Println(status)
-	query := "SELECT * FROM Events where dstatuses = '" + status + "'"
+	query := "SELECT * FROM events"
 	log.Println(query)
 
 	rows, err := db.Query(query)
