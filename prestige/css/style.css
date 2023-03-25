@@ -193,12 +193,14 @@ p {
 .events-column {
   flex-direction: column;
   display: flex;
+  width: 50%;
 }
 
 .price-column {
   color: white;
   display: flex;
   flex-direction: column;
+  width: 50;
 }
 
 .select {
