@@ -190,6 +190,10 @@ p {
   width: 70%;
 }
 
+.events {
+  display: flex;
+}
+
 .events-column {
   flex-direction: column;
   display: flex;
