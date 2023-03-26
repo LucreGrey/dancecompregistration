@@ -970,7 +970,7 @@ function filterEvents() {
                                     $("#lbn-column").append('<div class="form-row"></div>')
                                 }
                                 if (response[i].Style==stylesList[style]) {
-                                    $("#lbn-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
+                                    $("#lbn-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Age + ' ' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
                                 }
                                 count++;
                             }
@@ -996,7 +996,7 @@ function filterEvents() {
                                     $("#srs-column").append('<div class="form-row"></div>')
                                 }
                                 if (response[i].Style==stylesList[style]) {
-                                    $("#srs-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
+                                    $("#srs-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Age + ' ' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
                                 }
                                 count++;
                             }
