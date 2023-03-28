@@ -1015,8 +1015,8 @@ function filterEvents() {
                         }
                     }
                 }
-                $("#events-column").append('<div class="button-placeholder"></div>')
             }
+            $("#events-column").append('<div class="button-placeholder"></div>')
         }
     });
 }
