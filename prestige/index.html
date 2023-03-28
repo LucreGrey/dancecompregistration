@@ -15,8 +15,6 @@
 		<!-- Date Picker -->
 		<link rel="stylesheet" href="node_modules/calendarify/dist/calendarify.min.css" />
 		<script src="node_modules/calendarify/dist/calendarify.iife.js"></script>
-		<script type="module" src="js/datepicker.js"></script>
-		
 
 	</head>
 	<body>
@@ -52,7 +50,7 @@
 									</div>
 									<div class="form-row">
 										<div class="form-holder">
-											<input type="text" placeholder="DOB" class="date-picker" id="dobl" class="form-control">
+											<input type="text" placeholder="DOB" class="date-picker" id="date-picker" class="form-control">
 										</div>
 										<div class="form-holder">
 											<input type="text" placeholder="Phone" class="form-control">
@@ -226,6 +224,10 @@
 		<script src="js/fillLists.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/onload.js"></script>
+		<script>
+			const calendarify = new Calendarify('.date-picker', {quickActions:false,isDark: true,onChange: (calendarify) => console.log(calendarify),})
+		  calendarify.init()
+		</script>
 
 </body>
 </html>
