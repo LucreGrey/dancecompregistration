@@ -540,6 +540,10 @@ textarea.form-control {
     border: 1px solid #dad8e4;}
 }
 
+.flatpickr-mobile {
+  color: white;
+}
+
 @media (max-width: 362px) {
   .form-header {
     padding: 0px;
