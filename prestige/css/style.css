@@ -548,6 +548,11 @@ textarea.form-control {
   width: 100%;
 }
 
+.button-placeholder {
+  height: 130px;
+}
+
+
 @media (max-width: 362px) {
   .form-header {
     padding: 0px;
