@@ -50,7 +50,7 @@
 									</div>
 									<div class="form-row">
 										<div class="form-holder">
-											<input type="text" placeholder="DOB" id="datetime" class="form-control">
+											<input type="text" placeholder="DOB" id="datetimel" class="form-control">
 										</div>
 										<div class="form-holder">
 											<input type="text" placeholder="Phone" class="form-control">
@@ -91,7 +91,7 @@
 									</div>
 									<div class="form-row">
 										<div class="form-holder">
-											<input type="text" placeholder="DOB" class="form-control">
+											<input type="text" placeholder="DOB" id="datetimef" class="form-control">
 										</div>
 										<div class="form-holder">
 											<input type="text" placeholder="Phone" class="form-control">
@@ -228,9 +228,14 @@
 		<!-- Date Picker -->
 		<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 		<script>
-		flatpickr("#datetime", {
+		flatpickr("#datetimel", {
 			altInput: true,
-			clickOpens: true,
+    		altFormat: "F j, Y",
+    		dateFormat: "m-d-Y",
+		});
+
+		flatpickr("#datetimef", {
+			altInput: true,
     		altFormat: "F j, Y",
     		dateFormat: "m-d-Y",
 		});
