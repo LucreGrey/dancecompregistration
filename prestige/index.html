@@ -51,7 +51,7 @@
 									</div>
 									<div class="form-row">
 										<div class="form-holder">
-											<label>Date of Birth</label><input type="text" id="datetimel" class="form-control">
+											<label>Date of Birth</label><input type="text" id="datetime" class="form-control">
 										</div>
 										<div class="form-holder">
 											<label>Mobile Phone</label><input type="text" class="form-control">
@@ -92,7 +92,7 @@
 									</div>
 									<div class="form-row">
 										<div class="form-holder">
-											<label>Date of Birth</label><input type="text" id="datetimef" class="form-control">
+											<label>Date of Birth</label><input type="text" id="datetime" class="form-control">
 										</div>
 										<div class="form-holder">
 											<label>Mobile Phone</label><input type="text" class="form-control">
@@ -228,13 +228,7 @@
 
 		<!-- Date Picker -->
 		<script>
-		flatpickr("#datetimel", {
-			altInput: true,
-    		altFormat: "F j, Y",
-    		dateFormat: "m-d-Y",
-		});
-
-		flatpickr("#datetimef", {
+		flatpickr("#datetime", {
 			altInput: true,
     		altFormat: "F j, Y",
     		dateFormat: "m-d-Y",
