@@ -210,7 +210,6 @@ p {
 .smooth-rhythm-showdance {
   width: 50%;
   float: left;
-  clear: left;
 }
 
 .events-column {
@@ -223,7 +222,7 @@ p {
   color: white;
   flex-direction: column;
   display: flex;
-  float: left;
+  position: relative;
 }
 
 .select {
