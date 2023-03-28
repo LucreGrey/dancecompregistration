@@ -957,7 +957,7 @@ function filterEvents() {
                         }
                     }
                 }
-                $("#events-column").append('<div class="button-placeholder"></div>')
+                $("#srs-column").append('<div class="button-placeholder"></div>')
             }
             else {
                 for (style in stylesList) {
