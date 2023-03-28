@@ -199,6 +199,14 @@ p {
   float: left;
 }
 
+.flatpickr-input {
+  color: white;
+}
+
+.flatpickr-mobile {
+  color: white;
+}
+
 .smooth-rhythm-showdance {
   width: 50%;
   float: left;
