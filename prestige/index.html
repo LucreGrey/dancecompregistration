@@ -225,8 +225,6 @@
 		<!-- Date Picker -->
 		<script>
 			function calculateAge() {
-				birthDate = document.getElementById("#dob-l").innerHTML;
-				console.log(birthDate);
 				birthDate = document.getElementById("#dob-l").textContent;
 				console.log(birthDate);
 				var getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10);
