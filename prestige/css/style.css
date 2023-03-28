@@ -199,11 +199,6 @@ p {
   float: left;
 }
 
-.label {
-  display: inline-block;
-  
-}
-
 .flatpickr-input {
   color: white !important;
 }
