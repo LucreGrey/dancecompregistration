@@ -209,7 +209,8 @@ p {
 
 .smooth-rhythm-showdance {
   width: 50%;
-  float: left;
+
+  clear: left;
 }
 
 .events-column {
@@ -528,7 +529,7 @@ textarea.form-control {
   }
 
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   h3 {
     font-family: "Muli-SemiBold";
     font-size: 26px;
@@ -538,6 +539,21 @@ textarea.form-control {
     padding: 5px 5px;
     display: inline-block;
     border: 1px solid #dad8e4;}
+}
+
+.events-column {
+  flex-direction: column;
+  display: flex;
+  float: left;
+  width: 65%;
+}
+
+.price-column {
+  color: white;
+  flex-direction: column;
+  display: flex;
+  float: left;
+  width: 35%;
 }
 
 @media (max-width: 362px) {
