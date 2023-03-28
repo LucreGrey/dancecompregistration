@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<title>Dance Comp Registration</title>
@@ -90,7 +90,7 @@
 									</div>
 									<div class="form-row">
 										<div class="form-holder">
-											<input type="text" placeholder="DOB" id="datetime" class="form-control">
+											<input type="text" placeholder="DOB" class="form-control">
 										</div>
 										<div class="form-holder">
 											<input type="text" placeholder="Phone" class="form-control">
@@ -221,10 +221,10 @@
 		<!-- Date Picker -->
 		<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 		<script>
-			flatpickr("#datetime", {
-				enableTime: true,
-    			dateFormat: "m-d-Y",
-			});
+		flatpickr("#datetime", {
+			enableTime: true,
+			dateFormat: "Y-m-d H:i",
+		});
 		</script>
 
 		<!-- JQUERY STEP -->
