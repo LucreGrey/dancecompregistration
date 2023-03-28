@@ -899,7 +899,7 @@ function filterEvents() {
                         }
                     }
                 }
-                $("#events-column").append('<div class="button-placeholder"></div>')
+                $("#srs-column").append('<div class="button-placeholder"></div>')
             }
             else if (((leadStatus == "pro") && (followStatus == "am")) || ((leadStatus == "am") && (followStatus == "pro"))) {
                 for (style in stylesList) {
@@ -1015,8 +1015,8 @@ function filterEvents() {
                         }
                     }
                 }
+                $("#srs-column").append('<div class="button-placeholder"></div>')
             }
-            $("#events-column").append('<div class="button-placeholder"></div>')
         }
     });
 }
