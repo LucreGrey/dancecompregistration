@@ -200,11 +200,11 @@ p {
 }
 
 .flatpickr-input {
-  color: white;
+  color: white !important;
 }
 
 .flatpickr-mobile {
-  color: white;
+  color: white !important;
 }
 
 .smooth-rhythm-showdance {
@@ -538,10 +538,6 @@ textarea.form-control {
     padding: 5px 5px;
     display: inline-block;
     border: 1px solid #dad8e4;}
-}
-
-.flatpickr-mobile {
-  color: white;
 }
 
 @media (max-width: 362px) {
