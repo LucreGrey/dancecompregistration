@@ -11,10 +11,13 @@
 		<!-- STYLE CSS -->
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/video.css">
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-		<link rel="stylesheet" href="/resources/demos/style.css">
-		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+		<!-- Date Picker -->
+		<link rel="stylesheet" href="node_modules/calendarify/dist/calendarify.min.css" />
+		<script src="node_modules/calendarify/dist/calendarify.iife.js"></script>
+		<script src="js/datepicker.js"></script>
+		
+
 	</head>
 	<body>
 		<div class="wrapper">
@@ -49,7 +52,7 @@
 									</div>
 									<div class="form-row">
 										<div class="form-holder">
-											<input type="text" placeholder="DOB" id="datepicker" class="form-control">
+											<input type="text" placeholder="DOB" class="date-picker" id="dobl" class="form-control">
 										</div>
 										<div class="form-holder">
 											<input type="text" placeholder="Phone" class="form-control">
@@ -222,7 +225,6 @@
 		<script src="js/jquery.steps.js"></script>
 		<script src="js/fillLists.js"></script>
 		<script src="js/main.js"></script>
-		<script src="js/datepicker.js"></script>
 		<script src="js/onload.js"></script>
 
 </body>
