@@ -146,7 +146,7 @@ h3 {
   font-family: "Muli-SemiBold";
   font-size: 22px;
   color: #fff;
-  margin-top: 40px;
+  margin-top: 30px;
   margin-bottom: 10px; 
 }
 
@@ -197,6 +197,11 @@ p {
 .latin-ballroom-nightclub {
   width: 50%;
   float: left;
+}
+
+.label {
+  display: inline-block;
+  
 }
 
 .flatpickr-input {
