@@ -540,19 +540,12 @@ textarea.form-control {
     border: 1px solid #dad8e4;}
 }
 
-.events-column {
-  flex-direction: column;
-  display: flex;
-  float: left;
-  width: 60%;
+.latin-ballroom-nightclub {
+  width: 100%;
 }
 
-.price-column {
-  color: white;
-  flex-direction: column;
-  display: flex;
-  float: left;
-  width: 40%;
+.smooth-rhythm-showdance {
+  width: 100%;
 }
 
 @media (max-width: 362px) {
