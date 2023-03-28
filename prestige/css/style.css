@@ -209,7 +209,7 @@ p {
 
 .smooth-rhythm-showdance {
   width: 50%;
-
+  float: left;
   clear: left;
 }
 
