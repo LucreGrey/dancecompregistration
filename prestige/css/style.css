@@ -531,7 +531,7 @@ textarea.form-control {
 @media (max-width: 500px) {
   h3 {
     font-family: "Muli-SemiBold";
-    font-size: 26px;
+    font-size: 25px;
     color: #ff9900;
     text-transform: uppercase;
     letter-spacing: 7px;
@@ -544,7 +544,7 @@ textarea.form-control {
   flex-direction: column;
   display: flex;
   float: left;
-  width: 65%;
+  width: 60%;
 }
 
 .price-column {
@@ -552,7 +552,7 @@ textarea.form-control {
   flex-direction: column;
   display: flex;
   float: left;
-  width: 35%;
+  width: 40%;
 }
 
 @media (max-width: 362px) {
