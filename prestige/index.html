@@ -50,7 +50,35 @@
 									</div>
 									<div class="form-row">
 										<div class="form-holder">
-											<input type="text" placeholder="DOB" class="date-picker" id="date-picker" class="form-control">
+											<input type="text" placeholder="DOB" class="date-input" id="date-input" class="form-control">
+											<div class="calendarify show" data-theme="dark" style="--z-index:1000; top: 261.172px; left: 103.5px;">
+												<nav class="calendarify__navigations">
+												  <ul>
+													<li>
+													  <button data-action="prev" type="button"><i class="fas fa-fw fa-chevron-left"></i></button>
+													</li>
+													<li>
+													  <button data-action="expand" type="button">March 2023</button>
+													  <button data-action="year-range" class="d-none" type="button">2023</button>
+													</li>
+													<li>
+													  <button data-action="next" type="button"><i class="fas fa-fw fa-chevron-right"></i></button>
+													</li>
+												  </ul>
+												</nav>
+												<div class="calendarify__calendar">
+												  <ul class="days-wrapper wrapper">
+												  <li>Sun</li><li>Mon</li><li>Tue</li><li>Wed</li><li>Thu</li><li>Fri</li><li>Sat</li>
+												  </ul>
+												  <ul class="dates-wrapper wrapper"><li><button disabled="" type="button" class="date-button holiday ">27</button></li><li><button disabled="" type="button" class="date-button  active">28</button></li><li><button type="button" class="date-button  ">1</button></li><li><button type="button" class="date-button  ">2</button></li><li><button type="button" class="date-button  ">3</button></li><li><button type="button" class="date-button pre-holiday ">4</button></li><li><button type="button" class="date-button holiday ">5</button></li><li><button type="button" class="date-button  ">6</button></li><li><button type="button" class="date-button  ">7</button></li><li><button type="button" class="date-button  ">8</button></li><li><button type="button" class="date-button  ">9</button></li><li><button type="button" class="date-button  ">10</button></li><li><button type="button" class="date-button  ">11</button></li><li><button type="button" class="date-button pre-holiday ">12</button></li><li><button type="button" class="date-button holiday ">13</button></li><li><button type="button" class="date-button  ">14</button></li><li><button type="button" class="date-button  ">15</button></li><li><button type="button" class="date-button  ">16</button></li><li><button type="button" class="date-button  ">17</button></li><li><button type="button" class="date-button  ">18</button></li><li><button type="button" class="date-button pre-holiday ">19</button></li><li><button type="button" class="date-button holiday ">20</button></li><li><button type="button" class="date-button  ">21</button></li><li><button type="button" class="date-button  ">22</button></li><li><button type="button" class="date-button  ">23</button></li><li><button type="button" class="date-button  ">24</button></li><li><button type="button" class="date-button  ">25</button></li><li><button type="button" class="date-button pre-holiday ">26</button></li><li><button type="button" class="date-button holiday ">27</button></li><li><button type="button" class="date-button  active">28</button></li><li><button type="button" class="date-button  ">29</button></li><li><button type="button" class="date-button  ">30</button></li><li><button type="button" class="date-button  ">31</button></li></ul>
+												  <ul class="months-wrapper wrapper d-none">
+													<li><button class="" data-date="1" type="button">Jan</button></li><li><button class="" data-date="2" type="button">Feb</button></li><li><button class="active" data-date="3" type="button">Mar</button></li><li><button class="" data-date="4" type="button">Apr</button></li><li><button class="" data-date="5" type="button">May</button></li><li><button class="" data-date="6" type="button">Jun</button></li><li><button class="" data-date="7" type="button">Jul</button></li><li><button class="" data-date="8" type="button">Aug</button></li><li><button class="" data-date="9" type="button">Sep</button></li><li><button class="" data-date="10" type="button">Oct</button></li><li><button class="" data-date="11" type="button">Nov</button></li><li><button class="" data-date="12" type="button">Dec</button></li>
+												  </ul>
+												  <ul class="years-wrapper wrapper d-none">
+													<li><button data-date="2023" type="button">2023</button></li><li><button data-date="2024" type="button">2024</button></li><li><button data-date="2025" type="button">2025</button></li><li><button data-date="2026" type="button">2026</button></li><li><button data-date="2027" type="button">2027</button></li><li><button data-date="2028" type="button">2028</button></li><li><button data-date="2029" type="button">2029</button></li><li><button data-date="2030" type="button">2030</button></li><li><button data-date="2031" type="button">2031</button></li><li><button data-date="2032" type="button">2032</button></li><li><button data-date="2033" type="button">2033</button></li><li><button data-date="2034" type="button">2034</button></li>
+												  </ul>
+												</div>
+											  </div>
 										</div>
 										<div class="form-holder">
 											<input type="text" placeholder="Phone" class="form-control">
@@ -225,7 +253,7 @@
 		<script src="js/main.js"></script>
 		<script src="js/onload.js"></script>
 		<script>
-			const calendarify = new Calendarify('.date-picker', {quickActions:false,isDark: true,onChange: (calendarify) => console.log(calendarify),})
+			const calendarify = new Calendarify('.date-input', {quickActions:false,isDark: true,onChange: (calendarify) => console.log(calendarify),})
 		  calendarify.init()
 		</script>
 
