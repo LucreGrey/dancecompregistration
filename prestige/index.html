@@ -51,7 +51,7 @@
 									</div>
 									<div class="form-row">
 										<div class="form-holder">
-											<label>Date of Birth</label><input type="text" id="datetime" class="form-control">
+											<label>Date of Birth (M/D/Y)</label><input type="text" id="datetime" onchange="calculateAge()" class="form-control">
 										</div>
 										<div class="form-holder">
 											<label>Mobile Phone</label><input type="text" class="form-control">
@@ -92,7 +92,7 @@
 									</div>
 									<div class="form-row">
 										<div class="form-holder">
-											<label>Date of Birth</label><input type="text" id="datetime" class="form-control">
+											<label>Date of Birth (M/D/Y)</label><input type="text" id="datetime" onchange="calculateAge()" class="form-control">
 										</div>
 										<div class="form-holder">
 											<label>Mobile Phone</label><input type="text" class="form-control">
@@ -234,8 +234,10 @@
     		dateFormat: "Y-d-m",
 		});
 		console.log(birthDate)
-		var getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10)
-		console.log(getAge)
+		function calculateBirthDate() {
+			var getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10)
+			console.log(getAge)
+		}
 		</script>
 
 </body>
