@@ -229,24 +229,22 @@
 
 			function getLeadAge () {
 				console.log("Reached getLeadAge");
-				birthday = document.getElementById("dob-l").value;
-				console.log(birthday);
-				const calculateAge = (birthday) => {
+				birthDate = document.getElementById("dob-l").value;
+				console.log(birthDate);
+				console.log(calculateAge(birthDate));
+			}
+			function getFollowAge () {
+				console.log("Reached getFollowAge");
+				birthDate = document.getElementById("dob-f").value;
+				console.log(birthDate);
+				console.log(calculateAge(birthDate));
+			}
+
+			const calculateAge = (birthday) => {
 					const ageDifMs = Date.now() - new Date(birthday).getTime();
 					const ageDate = new Date(ageDifMs);
 					return Math.abs(ageDate.getUTCFullYear() - 1970);
 				}
-				console.log(calculateAge);
-			}
-			function getFollowAge () {
-				birthday = document.getElementById("dob-f").value;
-				const calculateAge = (birthday) => {
-					const ageDifMs = Date.now() - new Date(birthday).getTime();
-					const ageDate = new Date(ageDifMs);
-					followAge = Math.abs(ageDate.getUTCFullYear() - 1970);
-					console.log(followAge)
-				}
-			}
 		</script>
 
 </body>
