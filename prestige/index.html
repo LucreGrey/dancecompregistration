@@ -39,26 +39,26 @@
 									<div class="h2Other">Leader's Information</div>
 									<div class="form-row">
 										<div class="form-holder">
-											<label>First Name</label><input type="text" class="form-control">
+											<label>First Name</label><input type="text" id="lfn" value="" class="form-control">
 										</div>
 										<div class="form-holder">
-											<label>Last Name</label><input type="text" class="form-control">
-										</div>
-									</div>
-									<div class="form-row">
-										<div class="form-holder">
-											<label>Date of Birth (M/D/Y)</label><input type="date" id="dob-l" value="" onchange="getLeadAge()" class="form-control">
-										</div>
-										<div class="form-holder">
-											<label>Mobile Phone</label><input type="text" class="form-control">
-										</div>
-										<div class="form-holder">
-											<label>NDCA Number</label><input type="text" class="form-control">
+											<label>Last Name</label><input type="text" id="lln" value="" class="form-control">
 										</div>
 									</div>
 									<div class="form-row">
 										<div class="form-holder">
-											<label>Email Address</label><input type="text" class="form-control">
+											<label>Date of Birth (M/D/Y)</label><input type="date" id="dobl" value="" onchange="getLeadAge()" class="form-control">
+										</div>
+										<div class="form-holder">
+											<label>Mobile Phone</label><input type="text" id="lmp" value="" class="form-control">
+										</div>
+										<div class="form-holder">
+											<label>NDCA Number</label><input type="text" id="lndca" value="" class="form-control">
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-holder">
+											<label>Email Address</label><input type="email" id="lemail" value="" class="form-control">
 										</div>
 										<div class="form-holder" style="align-self: flex-end; transform: translateY(4px);">
 											<div class="checkbox-tick">
@@ -80,26 +80,26 @@
 									<div class="h2Other">Follow's Information</div>
 									<div class="form-row">
 										<div class="form-holder">
-											<label>First Name</label><input type="text" class="form-control">
+											<label>First Name</label><input type="text" id="ffn" value="" class="form-control">
 										</div>
 										<div class="form-holder">
-											<label>Last Name</label><input type="text" class="form-control">
-										</div>
-									</div>
-									<div class="form-row">
-										<div class="form-holder">
-											<label>Date of Birth (M/D/Y)</label><input type="date" id="dob-f" onchange="getFollowAge()" class="form-control">
-										</div>
-										<div class="form-holder">
-											<label>Mobile Phone</label><input type="text" class="form-control">
-										</div>
-										<div class="form-holder">
-											<label>NDCA Number</label><input type="text" class="form-control">
+											<label>Last Name</label><input type="text" id="fln" value="" class="form-control">
 										</div>
 									</div>
 									<div class="form-row">
 										<div class="form-holder">
-											<label>Email Address</label><input type="text" class="form-control">
+											<label>Date of Birth (M/D/Y)</label><input type="date" id="dobf" value="" onchange="getFollowAge()" class="form-control">
+										</div>
+										<div class="form-holder">
+											<label>Mobile Phone</label><input type="text" id="fmp" value="" class="form-control">
+										</div>
+										<div class="form-holder">
+											<label>NDCA Number</label><input type="text" id="fndca" value="" class="form-control">
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-holder">
+											<label>Email Address</label><input type="email" id="femail" value="" class="form-control">
 										</div>
 										<div class="form-holder" style="align-self: flex-end; transform: translateY(4px);">
 											<div class="checkbox-tick">
@@ -122,34 +122,34 @@
 							<div class="form-column3">
 								<div class="form-row">
 									<div class="form-holder w-100">
-										<label>Address</label><input type="text" class="form-control">
+										<label>Address</label><input type="text" id="addr" value="" class="form-control">
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="form-holder">
-										<label>City</label><input type="text" class="form-control">
+										<label>City</label><input type="text" id="city" value="" class="form-control">
 									</div>
 									<div class="form-holder">
-										<label>Zip Code</label><input type="text" class="form-control">
+										<label>Zip Code</label><input type="text" id="zip" value="" class="form-control">
 									</div>
 								</div>
 
 								<div class="form-row">
 									<div class="select">
 										<div class="form-holder">
-											<label>State</label><div class="select-control"></div>
+											<label>State</label><div class="select-control" id="state" value=""></div>
 											<i class="zmdi zmdi-caret-down"></i>
 										</div>
 										<ul class="dropdown" id="state-select">
 										</ul>
 									</div>
 									<div class="form-holder">
-										<label>Country</label><input type="text" class="form-control">
+										<label>Country</label><input type="text" id="country" value="" class="form-control">
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="form-holder">
-										<label>Studio</label><input type="text" class="form-control">
+										<label>Studio</label><input type="text" id="studio" value="" class="form-control">
 									</div>
 								</div>
 							</div>
@@ -195,17 +195,22 @@
 							<div class="form-header">
 								<h3>Prestige Dancesport Registration</h3>
 							</div>
-							<p>Send an optional message</p>
 							<div class="form-row">
 								<div class="form-holder w-100">
-									<textarea name="" id="" placeholder="Your messagere here!" class="form-control" style="height: 99px;"></textarea>
+									<label id="formlfn"></label><label id="formlln"></label>
+									<label id="formdobl"></label><label id="formlmp"></label>
+									<label id="formlndca"></label><label id="formlemail"></label>
 								</div>
-							</div>
-							<div class="checkbox-circle mt-24">
-								<label>
-									<input type="checkbox" checked>  Please accept <a href="#">terms and conditions ?</a>
-									<span class="checkmark"></span>
-								</label>
+								<div class="form-holder w-100">
+									<label id="formffn"></label><label id="formfln"></label>
+									<label id="formdobf"></label><label id="formfmp"></label>
+									<label id="formfndca"></label><label id="formfemail"></label>
+								</div>
+								<div class="form-holder w-100">
+									<label id="formaddr"></label><label id="formcity"></label>
+									<label id="formstate"></label><label id="formzip"></label>
+									<label id="formcountry"></label><label id="formstudio"></label>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -221,8 +226,12 @@
 		<script src="js/fillLists.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/getDate.js"></script>
+		<script src="js/fillForm.js"></script>
 		<script src="js/onload.js"></script>
 
+		<script>
+			var Couple = new Object();
+		</script>
 
 </body>
 </html>

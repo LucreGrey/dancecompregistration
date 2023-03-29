@@ -798,9 +798,12 @@ function paginationClickHandler(event)
             break;
 
         case "next":
-            console.log(state.currentIndex)
             if (state.currentIndex == 0) {
+                getInfo();
                 filterEvents();
+            }
+            if (state.currentIndex == 1) {
+                fillForm();
             }
             goToNextStep(wizard, options, state);
             break;
@@ -821,9 +824,6 @@ function filterEvents() {
     if (document.getElementById("followPro").checked == true) {
         followStatus = "pro"
     } else {followStatus = "am"}
-    console.log("Lead and Follow Statuses:")
-    console.log(leadStatus)
-    console.log(followStatus)
     $.ajax({
         url: "/api/getevents",
         type: "POST",
@@ -832,9 +832,7 @@ function filterEvents() {
         data: JSON.stringify({"leadstatus": leadStatus, "followstatus": followStatus}),
         complete: function(data,error) {
             console.log("DB Called")
-            console.log(data)
             var response = JSON.parse(data.responseText)
-            console.log(response)
             document.getElementById("lbn-column").innerHTML = "";
             document.getElementById("lbn-price-column").innerHTML = "";
             document.getElementById("srs-column").innerHTML = "";
@@ -996,7 +994,6 @@ function filterEvents() {
                                     $("#srs-column").append('<div class="form-row"></div>')
                                 }
                                 if (response[i].Style==stylesList[style]) {
-                                    console.log(response[i].Age)
                                     $("#srs-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Name + '">  ' + response[i].Age + ' ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
                                 }
                                 count++;

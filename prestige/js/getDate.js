@@ -3,12 +3,12 @@ var followAge;
 
 function getLeadAge () {
     console.log("Reached getLeadAge");
-    birthDate = document.getElementById("dob-l").value;
+    birthDate = document.getElementById("dobl").value;
     leadAge = calculateAge(birthDate);
 }
 function getFollowAge () {
     console.log("Reached getFollowAge");
-    birthDate = document.getElementById("dob-f").value;
+    birthDate = document.getElementById("dobf").value;
     followAge = calculateAge(birthDate);
 }
 
