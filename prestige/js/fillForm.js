@@ -31,7 +31,7 @@ function fillForm() {
 
     document.getElementById("formffn").value = Couple.ffn;
     document.getElementById("formfln").value = Couple.fln;
-    document.getElementById("formdob-f").value = Couple.dobf;
+    document.getElementById("formdobf").value = Couple.dobf;
     document.getElementById("formfmp").value = Couple.fmp;
     document.getElementById("formfndca").value = Couple.fndca;
     document.getElementById("formfemail").value = Couple.femail;
