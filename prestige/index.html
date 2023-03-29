@@ -224,11 +224,13 @@
 
 		<!-- Date Picker -->
 		<script>
-			var leadAge = 0;
-			var followAge = 0;
+			var leadAge;
+			var followAge;
 
 			function getLeadAge () {
+				console.log("Reached getLeadAge");
 				birthday = document.getElementById("dob-l").value;
+				console.log(birthday);
 				const calculateAge = (birthday) => {
 					const ageDifMs = Date.now() - new Date(birthday).getTime();
 					const ageDate = new Date(ageDifMs);
