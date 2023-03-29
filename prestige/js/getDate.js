@@ -4,14 +4,12 @@ var followAge;
 function getLeadAge () {
     console.log("Reached getLeadAge");
     birthDate = document.getElementById("dob-l").value;
-    console.log(birthDate);
-    console.log(calculateAge(birthDate));
+    leadAge = calculateAge(birthDate);
 }
 function getFollowAge () {
     console.log("Reached getFollowAge");
     birthDate = document.getElementById("dob-f").value;
-    console.log(birthDate);
-    console.log(calculateAge(birthDate));
+    followAge = calculateAge(birthDate);
 }
 
 const calculateAge = (birthday) => {

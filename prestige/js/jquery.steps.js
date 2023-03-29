@@ -996,6 +996,7 @@ function filterEvents() {
                                     $("#srs-column").append('<div class="form-row"></div>')
                                 }
                                 if (response[i].Style==stylesList[style]) {
+                                    console.log(response[i].Age)
                                     $("#srs-column").append('<div class="checkbox-circle mt-7"><label><input type="checkbox" id="' + response[i].Age + ' ' + response[i].Name + '">  ' + response[i].Name + '</a><span class="checkmark"></span></label></div>')
                                 }
                                 count++;
