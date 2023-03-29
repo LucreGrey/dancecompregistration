@@ -228,7 +228,7 @@
 			var followAge = 0;
 
 			function getLeadAge () {
-				birthDate = document.getElementById("dob-l").value;
+				birthday = document.getElementById("dob-l").value;
 				const calculateAge = (birthday) => {
 					const ageDifMs = Date.now() - new Date(birthday).getTime();
 					const ageDate = new Date(ageDifMs);
@@ -237,7 +237,7 @@
 				}
 			}
 			function getFollowAge () {
-				birthDate = document.getElementById("dob-f").value;
+				birthday = document.getElementById("dob-f").value;
 				const calculateAge = (birthday) => {
 					const ageDifMs = Date.now() - new Date(birthday).getTime();
 					const ageDate = new Date(ageDifMs);
