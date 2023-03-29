@@ -234,9 +234,9 @@
 				const calculateAge = (birthday) => {
 					const ageDifMs = Date.now() - new Date(birthday).getTime();
 					const ageDate = new Date(ageDifMs);
-					leadAge = Math.abs(ageDate.getUTCFullYear() - 1970);
-					console.log(leadAge)
+					return Math.abs(ageDate.getUTCFullYear() - 1970);
 				}
+				console.log(calculateAge);
 			}
 			function getFollowAge () {
 				birthday = document.getElementById("dob-f").value;
