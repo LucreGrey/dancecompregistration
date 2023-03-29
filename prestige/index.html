@@ -47,7 +47,7 @@
 									</div>
 									<div class="form-row">
 										<div class="form-holder">
-											<label>Date of Birth (M/D/Y)</label><input type="date" id="dob-l" value="" onchange="calculateAge()" class="form-control">
+											<label>Date of Birth (M/D/Y)</label><input type="date" id="dob-l" value="" onchange="getLeadAge()" class="form-control">
 										</div>
 										<div class="form-holder">
 											<label>Mobile Phone</label><input type="text" class="form-control">
@@ -88,7 +88,7 @@
 									</div>
 									<div class="form-row">
 										<div class="form-holder">
-											<label>Date of Birth (M/D/Y)</label><input type="date" id="dob-f" onchange="calculateAge()" class="form-control">
+											<label>Date of Birth (M/D/Y)</label><input type="date" id="dob-f" onchange="getFollowAge()" class="form-control">
 										</div>
 										<div class="form-holder">
 											<label>Mobile Phone</label><input type="text" class="form-control">
@@ -227,7 +227,7 @@
 			var leadAge = 0;
 			var followAge = 0;
 
-			leadAge = function getLeadAge () {
+			function getLeadAge () {
 				birthDate = document.getElementById("dob-l").value;
 				const calculateAge = (birthday) => {
 					const ageDifMs = Date.now() - new Date(birthday).getTime();
