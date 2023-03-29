@@ -1,14 +1,14 @@
 function getInfo() {
     Couple.lfn = document.getElementById("lfn").value;
     Couple.lln = document.getElementById("lln").value;
-    Couple.dobl = document.getElementById("dob-l").value;
+    Couple.dobl = document.getElementById("dobl").value;
     Couple.lmp = document.getElementById("lmp").value;
     Couple.lndca = document.getElementById("lndca").value;
     Couple.lemail = document.getElementById("lemail").value;
 
     Couple.ffn = document.getElementById("ffn").value;
     Couple.fln = document.getElementById("fln").value;
-    Couple.dobf = document.getElementById("dob-f").value;
+    Couple.dobf = document.getElementById("dobf").value;
     Couple.fmp = document.getElementById("fmp").value;
     Couple.fndca = document.getElementById("fndca").value;
     Couple.femail = document.getElementById("femail").value;
