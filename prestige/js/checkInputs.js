@@ -19,7 +19,7 @@ function checkEmail (str) {
         return true
     } else {
         // Failed
-        alert(str + " doesn't look right, please double check it.")
+        alert(str + " doesn't look right as an email address, please double check it. Try1 == " + try1 + "Try2 == " + try2);
         return false;
     }
 }
