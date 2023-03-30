@@ -233,7 +233,6 @@ function destroy(wizard, options)
     // Remove virtual data objects from the wizard
     wizard.unbind(eventNamespace).removeData("uid").removeData("options")
         .removeData("state").removeData("steps").removeData("eventNamespace")
-        .find(".actions a").unbind(eventNamespace);
 
     // Remove attributes and CSS classes from the wizard
     wizard.removeClass(options.clearFixCssClass + " vertical");
@@ -836,15 +835,6 @@ function refreshPagination(wizard, options, state)
 {
     if (options.enablePagination)
     {
-        var finish = wizard.find(".actions a[href$='#finish']").parent(),
-            next = wizard.find(".actions a[href$='#next']").parent();
-
-        if (!options.forceMoveForward)
-        {
-            var previous = wizard.find(".actions a[href$='#previous']").parent();
-            previous._enableAria(state.currentIndex > 0);
-        }
-
         if (options.enableFinishButton && options.showFinishButtonAlways)
         {
             finish._enableAria(state.stepCount > 0);
@@ -936,7 +926,6 @@ function registerEvents(wizard, options)
         wizard.bind("keyup" + eventNamespace, keyUpHandler);
     }
 
-    wizard.find(".actions a").bind("click" + eventNamespace, paginationClickHandler);
 }
 
 /**
@@ -1065,38 +1054,6 @@ function renderBody(wizard, state, body, index)
  * @param options {Object} Settings of the current wizard
  * @param state {Object} The state container of the current wizard
  */
-function renderPagination(wizard, options, state)
-{
-    if (options.enablePagination)
-    {
-        var pagination = "<{0} class=\"actions {1}\"><ul role=\"menu\" aria-label=\"{2}\">{3}</ul></{0}>",
-            buttonTemplate = "<li><a href=\"#{0}\" id=\"{0}\" role=\"menuitem\">{1}</a></li>",
-            buttons = "";
-
-        if (!options.forceMoveForward)
-        {
-            buttons += buttonTemplate.format("previous", options.labels.previous);
-        }
-
-        buttons += buttonTemplate.format("next", options.labels.next);
-
-        if (options.enableFinishButton)
-        {
-            buttons += buttonTemplate.format("finish", options.labels.finish);
-        }
-
-        if (options.enableCancelButton)
-        {
-            buttons += buttonTemplate.format("cancel", options.labels.cancel);
-        }
-
-        wizard.append(pagination.format(options.actionContainerTag, options.clearFixCssClass,
-            options.labels.pagination, buttons));
-
-        refreshPagination(wizard, options, state);
-        loadAsyncContent(wizard, options, state);
-    }
-}
 
 /**
  * Renders a template and replaces all placeholder.
