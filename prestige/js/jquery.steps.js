@@ -799,7 +799,9 @@ function paginationClickHandler(event)
 
         case "next":
             if (state.currentIndex == 0) {
-                if (getInfo() != false) {
+                var checkInputs = getInfo();
+                console.log(checkInputs)
+                if (checkInputs != false) {
                     filterEvents();
                     goToNextStep(wizard, options, state);
                     break;
