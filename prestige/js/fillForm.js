@@ -16,7 +16,7 @@ function getInfo() {
     Couple.addr = document.getElementById("addr").value;
     Couple.city = document.getElementById("city").value;
     Couple.zip = document.getElementById("zip").value;
-    Couple.state = document.getElementById("state").value;
+    Couple.state = document.getElementById("state").innerText;
     Couple.country = document.getElementById("country").value;
     Couple.studio = document.getElementById("studio").value;
 }
