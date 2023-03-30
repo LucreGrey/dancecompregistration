@@ -5,7 +5,8 @@ function checkInputs (str) {
         return true
     } else {
         // Failed
-        alert(str + " is not correct, please double check it. Try1 == " + try1 + "Try2 == " + try2)
+        console.log("Failed")
+        alert(str + " is not correct, please double check it. Try1 == " + try1)
         return false;
     }
 }
