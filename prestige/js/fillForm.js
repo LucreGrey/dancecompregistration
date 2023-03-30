@@ -21,29 +21,30 @@ function getInfo() {
     Couple.studio = document.getElementById("studio").value;
 
     if (
-        (Couple.lfn == null) ||
-        (Couple.lln == null) ||
-        (Couple.dobl == null) ||
-        (Couple.lmp == null) ||
-        (Couple.lndca == null) ||
-        (Couple.lemail == null) ||
+        (Couple.lfn == undefined) ||
+        (Couple.lln == undefined) ||
+        (Couple.dobl == undefined) ||
+        (Couple.lmp == undefined) ||
+        (Couple.lndca == undefined) ||
+        (Couple.lemail == undefined) ||
 
-        (Couple.ffn == null) ||
-        (Couple.fln == null) ||
-        (Couple.dobf == null) ||
-        (Couple.fmp == null) ||
-        (Couple.fndca == null) ||
-        (Couple.femail == null) ||
+        (Couple.ffn == undefined) ||
+        (Couple.fln == undefined) ||
+        (Couple.dobf == undefined) ||
+        (Couple.fmp == undefined) ||
+        (Couple.fndca == undefined) ||
+        (Couple.femail == undefined) ||
 
-        (Couple.addr == null) ||
-        (Couple.city == null) ||
-        (Couple.zip == null) ||
-        (Couple.state == null) ||
-        (Couple.country == null) ||
-        (Couple.studio == null) 
+        (Couple.addr == undefined) ||
+        (Couple.city == undefined) ||
+        (Couple.zip == undefined) ||
+        (Couple.state == undefined) ||
+        (Couple.country == undefined) ||
+        (Couple.studio == undefined) 
     ) {
         return false;
     }
+    return true;
 }
 
 function checkEvents() {
