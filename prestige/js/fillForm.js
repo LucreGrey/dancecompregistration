@@ -20,27 +20,28 @@ function getInfo() {
     Couple.country = document.getElementById("country").value;
     Couple.studio = document.getElementById("studio").value;
 
+    // If any of these aren't filled in, undefined, or fail the checkInputs/checkEmail test, throw an alert
     if (
-        (Couple.lfn == undefined || Couple.lfn == "") ||
-        (Couple.lln == undefined || Couple.lln == "") ||
-        (Couple.dobl == undefined || Couple.dobl == "") ||
-        (Couple.lmp == undefined || Couple.lmp == "") ||
-        (Couple.lndca == undefined || Couple.lndca == "") ||
-        (Couple.lemail == undefined || Couple.lemail == "") ||
+        (Couple.lfn == undefined || Couple.lfn == "" || checkInputs(Couple.lfn) == false) ||
+        (Couple.lln == undefined || Couple.lln == "" || checkInputs(Couple.lln) == false) ||
+        (Couple.dobl == undefined || Couple.dobl == "" || checkInputs(Couple.dobl) == false) ||
+        (Couple.lmp == undefined || Couple.lmp == "" || checkInputs(Couple.lmp) == false) ||
+        (Couple.lndca == undefined || Couple.lndca == "" || (Number.isInteger(Couple.lndca) == false) || checkInputs(Couple.lndca) == false ) ||
+        (Couple.lemail == undefined || Couple.lemail == "" || checkEmail(Couple.lemail) == false) ||
 
-        (Couple.ffn == undefined || Couple.ffn == "") ||
-        (Couple.fln == undefined || Couple.fln == "") ||
-        (Couple.dobf == undefined || Couple.dobf == "") ||
-        (Couple.fmp == undefined || Couple.fmp == "") ||
-        (Couple.fndca == undefined || Couple.fndca == "") ||
-        (Couple.femail == undefined || Couple.femail == "") ||
+        (Couple.ffn == undefined || Couple.ffn == "" || checkInputs(Couple.ffn) == false) ||
+        (Couple.fln == undefined || Couple.fln == "" || checkInputs(Couple.fln) == false) ||
+        (Couple.dobf == undefined || Couple.dobf == "" || checkInputs(Couple.dobf) == false) ||
+        (Couple.fmp == undefined || Couple.fmp == "" || checkInputs(Couple.fmp) == false) ||
+        (Couple.fndca == undefined || Couple.fndca == "" || (Number.isInteger(Couple.fndca) == false) || checkInputs(Couple.fndca) == false) ||
+        (Couple.femail == undefined || Couple.femail == "" || checkEmail(Couple.femail) == false) ||
 
-        (Couple.addr == undefined || Couple.addr == "") ||
-        (Couple.city == undefined || Couple.city == "") ||
-        (Couple.zip == undefined || Couple.zip == "") ||
-        (Couple.state == undefined || Couple.state == "") ||
-        (Couple.country == undefined || Couple.country == "") ||
-        (Couple.studio == undefined || Couple.studio == "") 
+        (Couple.addr == undefined || Couple.addr == ""  || checkInputs(Couple.addr) == false) ||
+        (Couple.city == undefined || Couple.city == "" || checkInputs(Couple.city) == false) ||
+        (Couple.zip == undefined || Couple.zip == "" || checkInputs(Couple.zip) == false) ||
+        (Couple.state == undefined || Couple.state == "" || checkInputs(Couple.state) == false) ||
+        (Couple.country == undefined || Couple.country == "" || checkInputs(Couple.country) == false) ||
+        (Couple.studio == undefined || Couple.studio == "" || checkInputs(Couple.studio) == false) 
     ) {
         return false;
     }
