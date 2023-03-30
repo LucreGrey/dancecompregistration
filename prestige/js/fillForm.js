@@ -19,6 +19,37 @@ function getInfo() {
     Couple.state = document.getElementById("state").innerText;
     Couple.country = document.getElementById("country").value;
     Couple.studio = document.getElementById("studio").value;
+
+    if (
+        (Couple.lfn == null) ||
+        (Couple.lln == null) ||
+        (Couple.dobl == null) ||
+        (Couple.lmp == null) ||
+        (Couple.lndca == null) ||
+        (Couple.lemail == null) ||
+
+        (Couple.ffn == null) ||
+        (Couple.fln == null) ||
+        (Couple.dobf == null) ||
+        (Couple.fmp == null) ||
+        (Couple.fndca == null) ||
+        (Couple.femail == null) ||
+
+        (Couple.addr == null) ||
+        (Couple.city == null) ||
+        (Couple.zip == null) ||
+        (Couple.state == null) ||
+        (Couple.country == null) ||
+        (Couple.studio == null) 
+    ) {
+        return false;
+    }
+}
+
+function checkEvents() {
+    var checkedBoxes = document.querySelectorAll('input[name=selectedEvents]:checked');
+    console.log(checkedBoxes);
+    console.log(checkedBoxes[0].innerText)
 }
 
 function fillForm() {
