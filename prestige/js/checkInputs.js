@@ -6,6 +6,7 @@ function checkInputs (str) {
         return true
     } else {
         // Failed
+        alert(str + " is not correct, please double check it.")
         return false;
     }
 }
@@ -18,6 +19,7 @@ function checkEmail (str) {
         return true
     } else {
         // Failed
+        alert(str + " doesn't look right, please double check it.")
         return false;
     }
 }
