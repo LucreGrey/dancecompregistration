@@ -214,6 +214,9 @@ input[type="date"]:before {
   color: transparent;
   background: none;
   display: block;
+  font-family: 'FontAwesome';
+  content: '\f073';
+  /* This is the calendar icon in FontAwesome */
   width: 15px;
   height: 20px;
   position: absolute;
