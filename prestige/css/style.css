@@ -199,12 +199,8 @@ p {
   float: left;
 }
 
-.flatpickr-input {
-  color: white !important;
-}
-
-.flatpickr-mobile {
-  color: white !important;
+input[type="date"]:before {
+  color: #fff;
 }
 
 .smooth-rhythm-showdance {
