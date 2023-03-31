@@ -214,7 +214,6 @@ input[type="date"]:before {
   color: transparent;
   background: none;
   display: block;
-  font-family: 'FontAwesome';
   width: 15px;
   height: 20px;
   position: absolute;
