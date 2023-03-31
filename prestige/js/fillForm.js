@@ -26,14 +26,14 @@ function getInfo() {
         (checkInputs(Couple.lln, "Lead's Last Name") == false) ||
         (checkInputs(Couple.dobl, "Lead's Date of Birth") == false) ||
         (checkInputs(Couple.lmp, "Lead's Phone Number") == false) ||
-        (checkInputs(Couple.lndca, "Lead's NDCA Number") == false ) ||
+        ((Number.isInteger(Couple.lndca) == false) || checkInputs(Couple.lndca, "Lead's NDCA Number") == false ) ||
         (checkEmail(Couple.lemail, "Lead's Email Address") == false) ||
 
         (checkInputs(Couple.ffn, "Follow's First Name") == false) ||
         (checkInputs(Couple.fln, "Follow's Last Name") == false) ||
         (checkInputs(Couple.dobf, "Follow's Date of Birth") == false) ||
         (checkInputs(Couple.fmp, "Follow's Phone Number") == false) ||
-        (checkInputs(Couple.fndca, "Follow's NDCA Number") == false) ||
+        ((Number.isInteger(Couple.fndca) == false) || checkInputs(Couple.fndca, "Follow's NDCA Number") == false) ||
         (checkEmail(Couple.femail, "Follow's Email Address") == false) ||
 
         (checkInputs(Couple.addr, "Address") == false) ||
