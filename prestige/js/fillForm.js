@@ -22,26 +22,26 @@ function getInfo() {
 
     // If any of these aren't filled in, undefined, or fail the checkInputs/checkEmail test, throw an alert
     if (
-        (Couple.lfn == undefined || Couple.lfn == "" || checkInputs(Couple.lfn) == false) ||
-        (Couple.lln == undefined || Couple.lln == "" || checkInputs(Couple.lln) == false) ||
-        (Couple.dobl == undefined || Couple.dobl == "" || checkInputs(Couple.dobl) == false) ||
-        (Couple.lmp == undefined || Couple.lmp == "" || checkInputs(Couple.lmp) == false) ||
-        (Couple.lndca == undefined || Couple.lndca == "" || (Number.isInteger(Couple.lndca) == false) || checkInputs(Couple.lndca) == false ) ||
-        (Couple.lemail == undefined || Couple.lemail == "" || checkEmail(Couple.lemail) == false) ||
+        (checkInputs(Couple.lfn, "Lead's First Name") == false) ||
+        (checkInputs(Couple.lln, "Lead's Last Name") == false) ||
+        (checkInputs(Couple.dobl, "Lead's Date of Birth") == false) ||
+        (checkInputs(Couple.lmp, "Lead's Phone Number") == false) ||
+        ((Number.isInteger(Couple.lndca) == false) || checkInputs(Couple.lndca, "Lead's NDCA Number") == false ) ||
+        (checkEmail(Couple.lemail, "Lead's Email Address") == false) ||
 
-        (Couple.ffn == undefined || Couple.ffn == "" || checkInputs(Couple.ffn) == false) ||
-        (Couple.fln == undefined || Couple.fln == "" || checkInputs(Couple.fln) == false) ||
-        (Couple.dobf == undefined || Couple.dobf == "" || checkInputs(Couple.dobf) == false) ||
-        (Couple.fmp == undefined || Couple.fmp == "" || checkInputs(Couple.fmp) == false) ||
-        (Couple.fndca == undefined || Couple.fndca == "" || (Number.isInteger(Couple.fndca) == false) || checkInputs(Couple.fndca) == false) ||
-        (Couple.femail == undefined || Couple.femail == "" || checkEmail(Couple.femail) == false) ||
+        (checkInputs(Couple.ffn, "Follow's First Name") == false) ||
+        (checkInputs(Couple.fln, "Follow's Last Name") == false) ||
+        (checkInputs(Couple.dobf, "Follow's Date of Birth") == false) ||
+        (checkInputs(Couple.fmp, "Follow's Phone Number") == false) ||
+        ((Number.isInteger(Couple.fndca) == false) || checkInputs(Couple.fndca, "Follow's NDCA Number") == false) ||
+        (checkEmail(Couple.femail, "Follow's Email Address") == false) ||
 
-        (Couple.addr == undefined || Couple.addr == ""  || checkInputs(Couple.addr) == false) ||
-        (Couple.city == undefined || Couple.city == "" || checkInputs(Couple.city) == false) ||
-        (Couple.zip == undefined || Couple.zip == "" || checkInputs(Couple.zip) == false) ||
-        (Couple.state == undefined || Couple.state == "" || checkInputs(Couple.state) == false) ||
-        (Couple.country == undefined || Couple.country == "" || checkInputs(Couple.country) == false) ||
-        (Couple.studio == undefined || Couple.studio == "" || checkInputs(Couple.studio) == false) 
+        (checkInputs(Couple.addr, "Address") == false) ||
+        (checkInputs(Couple.city, "City") == false) ||
+        (checkInputs(Couple.zip, "Zip Code") == false) ||
+        (checkInputs(Couple.state, "State") == false) ||
+        (checkInputs(Couple.country, "Country") == false) ||
+        (checkInputs(Couple.studio, "Studio") == false) 
     ) {
         return false;
     }

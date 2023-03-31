@@ -1,27 +1,34 @@
-function checkInputs (str) {
+function checkInputs (str, box) {
     let try1 = str.search("<")
     console.log(str)
     console.log(try1)
-    if (try1 == -1) {
-        // Passed the test
-        return true
-    } else {
-        // Failed
-        console.log("Failed")
-        alert(str + " is not correct, please double check it. Try1 == " + try1)
+    if (str == "" || str == undefined) {
+        // Empty String
+        alert("The " + box + " is empty or failed to process, please check it.")
         return false;
+    } else if (try1 != -1) {
+        // Failed
+        alert("The " + box + " does not look right, please double check it.")
+        return false;
+    } else {
+        return true;
     }
 }
 
 function checkEmail (str) {
     let try1 = str.search("@")
     let try2 = str.search("<script>")
-    if (try1 != -1 && try2 == -1) {
-        // Passed
-        return true
-    } else {
-        // Failed
-        alert(str + " doesn't look right as an email address, please double check it. Try1 == " + try1 + "Try2 == " + try2);
+    console.log(str)
+    console.log(try1)
+    if (str == "" || str == undefined) {
+        // Empty String
+        alert("The " + box + " is empty or failed to process, please check it.")
         return false;
+    } else if (try1 != -1 && try2 == -1) {
+        // Failed
+        alert("The " + box + " does not look right, please double check it.")
+        return false;
+    } else {
+        return true;
     }
 }
