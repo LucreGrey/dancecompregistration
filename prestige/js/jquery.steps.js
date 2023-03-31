@@ -805,6 +805,8 @@ function paginationClickHandler(event)
                     filterEvents();
                     goToNextStep(wizard, options, state);
                     break;
+                } else {
+                    alert("Missing info - Please check all the fields again")
                 }
             }
             if (state.currentIndex == 1) {

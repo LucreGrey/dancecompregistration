@@ -1,5 +1,7 @@
 function checkInputs (str) {
     let try1 = str.search("<")
+    console.log(str)
+    console.log(try1)
     if (try1 == -1) {
         // Passed the test
         return true
