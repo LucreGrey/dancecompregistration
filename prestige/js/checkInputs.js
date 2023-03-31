@@ -1,7 +1,5 @@
 function checkInputs (str, box) {
     let try1 = str.search("<")
-    console.log(str)
-    console.log(try1)
     if (str == "" || str == undefined) {
         // Empty String
         alert("The " + box + " is empty or failed to process, please check it.")
@@ -15,11 +13,9 @@ function checkInputs (str, box) {
     }
 }
 
-function checkEmail (str) {
+function checkEmail (str, box) {
     let try1 = str.search("@")
     let try2 = str.search("<script>")
-    console.log(str)
-    console.log(try1)
     if (str == "" || str == undefined) {
         // Empty String
         alert("The " + box + " is empty or failed to process, please check it.")
