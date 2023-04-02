@@ -9,5 +9,5 @@ func ResourceHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "home")
+	http.ServeFile(w, r, "webpage")
 }

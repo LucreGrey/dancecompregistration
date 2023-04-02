@@ -1,9 +1,10 @@
 package models
 
 type Competition struct {
-	Id   int
-	Name string
-	Year string
+	Id        int
+	Name      string
+	Year      string
+	ActiveReg bool
 }
 
 type Event struct {

@@ -43,6 +43,58 @@ func init() {
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
+func GetCompetitions(w http.ResponseWriter, r *http.Request) {
+	log.Println("Reached Get Competitions")
+
+	// Open the db
+	connStr := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
+		host, port, user, password, dbname)
+
+	// Open a connection to the database
+	db, err := sql.Open("postgres", connStr)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer db.Close()
+
+	rows, err := db.Query("SELECT * FROM competitions WHERE activeReg=TRUE")
+	if err != nil {
+		log.Println("There was an error querying the db")
+		log.Println(err)
+	}
+	log.Println("Called DB")
+	defer rows.Close()
+
+	// creates placeholder of the sandbox
+	allCompetitions := make([]models.Competition, 0)
+
+	// we loop through the values of rows
+	for rows.Next() {
+		competition := models.Competition{}
+		err := rows.Scan(&competition.Id, &competition.Name, &competition.Year, &competition.ActiveReg)
+		if err != nil {
+			log.Println(err)
+			return
+		}
+		allCompetitions = append(allCompetitions, competition)
+	}
+
+	if err = rows.Err(); err != nil {
+		log.Println(err)
+		return
+	}
+
+	// loop and display the result in the browser
+	for _, event := range allCompetitions {
+		fmt.Println(event.Name)
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(allCompetitions)
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
 func GetEvents(w http.ResponseWriter, r *http.Request) {
 	log.Println("Reached Get Events")
 	decoder := json.NewDecoder(r.Body)
@@ -54,7 +106,7 @@ func GetEvents(w http.ResponseWriter, r *http.Request) {
 	log.Println(req.LStatus)
 
 	// We assign the result to 'rows'
-	var status = req.LStatus + req.FStatus
+	status := req.LStatus + req.FStatus
 	if status == "ampro" {
 		status = "proam"
 	}
@@ -71,7 +123,7 @@ func GetEvents(w http.ResponseWriter, r *http.Request) {
 	}
 	defer db.Close()
 
-	rows, err := db.Query("SELECT * FROM events WHERE dstatuses = $1", status)
+	rows, err := db.Query("SELECT * FROM events WHERE dstatuses = $1 && compid = $2", status, req.CompId)
 	if err != nil {
 		log.Println("There was an error querying the db")
 		log.Println(err)
