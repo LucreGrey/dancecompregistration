@@ -57,7 +57,7 @@ func GetCompetitions(w http.ResponseWriter, r *http.Request) {
 	}
 	defer db.Close()
 
-	rows, err := db.Query("SELECT * FROM competitions WHERE activeReg=TRUE")
+	rows, err := db.Query("SELECT * FROM competitions WHERE activereg = TRUE")
 	if err != nil {
 		log.Println("There was an error querying the db")
 		log.Println(err)
