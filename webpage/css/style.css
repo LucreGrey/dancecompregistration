@@ -1,0 +1,588 @@
+@font-face {
+  font-family: "Muli-Regular";
+  src: url("../fonts/muli/Muli-Regular.ttf"); }
+@font-face {
+  font-family: "Muli-SemiBold";
+  src: url("../fonts/muli/Muli-SemiBold.ttf"); }
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-family: "Muli-Regular";
+  font-size: 15px;
+  color: #999;
+  margin: 0; }
+
+:focus {
+  outline: none; }
+
+textarea {
+  resize: none; }
+
+input, textarea, select, button {
+  font-family: "Muli-Regular";
+  font-size: 15px; }
+
+p, h1, h2, h3, h4, h5, h6, ul {
+  margin: 0; }
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+textarea {
+  resize: none; }
+
+img {
+  max-width: 100%; }
+
+.wrapper {
+  height: 100vh;
+  background: #f9f6f1;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.wizard {
+  width: 90%;
+  position: absolute; }
+
+.wizard > .steps {
+  position: absolute;
+  /*transform: translateX(33.5%);*/
+  top: 85%;
+  right: 6%;
+  z-index: 1; }
+
+.wizard > .steps .current-info, .wizard > .steps .number {
+  display: none; }
+
+.wizard > .steps ul {
+  display: flex;
+  justify-content: right; }
+
+.wizard > .steps li a {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e9e0cf;
+  margin-right: 78px;
+  position: relative; }
+  .wizard > .steps li a:before {
+    content: "";
+    width: 58px;
+    height: 2px;
+    background: #e9e0cf;
+    position: absolute;
+    right: 22px;
+    top: 5px; }
+  .wizard > .steps li a:after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #ff9900;
+    position: absolute;
+    left: -68px;
+    top: 5px;
+    transition: all 0.6s ease; }
+.wizard > .steps li.first a {
+  background: #ff9900; }
+.wizard > .steps li.checked a {
+  background: #ff9900; }
+  .wizard > .steps li.checked a:after {
+    width: 58px; }
+.wizard > .steps li:last-child a {
+  margin-right: 0; }
+.wizard > .steps li:first-child a:before {
+  display: none; }
+.wizard > .steps li:first-child a:after {
+  display: none; }
+
+.wizard > .content {
+  position: relative;
+  height: 100%; }
+
+.inner {
+  display: flex;
+  background: rgba(0, 0, 0, .9);
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.2); }
+
+.image-holder {
+  width: 30%;
+  height: 100%; }
+
+.form-content {
+  width: 70%;
+  padding-top: 65px;
+  padding-left: 51px;
+  padding-right: 51px; }
+
+.form-header {
+  text-align: center; }
+
+h3 {
+  font-family: "Muli-SemiBold";
+  font-size: 26px;
+  color: #ff9900;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  padding: 5px 15px;
+  display: inline-block;
+  border: 1px solid #dad8e4;}
+
+.h2Other {
+  text-align: left;
+  font-family: "Muli-SemiBold";
+  font-size: 22px;
+  color: #fff;
+  margin-top: 40px;
+  margin-bottom: 10px; 
+}
+
+p {
+  font-family: "Muli-SemiBold";
+  font-size: 25px;
+  color: #ff9900;
+  text-align: center;
+  margin-bottom: 26px; }
+
+.form-row {
+  display: flex;
+  margin-bottom: 18px; }
+  .form-row .form-holder {
+    width: 50%;
+    margin-right: 30px; }
+    .form-row .form-holder:last-child {
+      margin-right: 0; }
+    .form-row .form-holder.w-100 {
+      width: 100%;
+      margin-right: 0; }
+  .form-row .select {
+    width: 50%;
+    margin-right: 30px; }
+    .form-row .select .form-holder {
+      width: 100%;
+      margin-right: 0; }
+
+.form-column1 {
+  width: 50%;
+  margin-right: 45px; 
+}
+
+.form-column2 {
+  width: 50%;
+}
+
+.form-column3 {
+  align-content: center;
+  margin-left: 15%;
+  width: 70%;
+}
+
+.button-placeholder {
+  height: 50px;
+}
+
+.latin-ballroom-nightclub {
+  width: 50%;
+  float: left;
+}
+
+input[type="date"] {
+  position: relative;
+  padding: 10px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: transparent;
+  background: none;
+  z-index: 1;
+}
+
+input[type="date"]:before {
+  color: transparent;
+  background: none;
+  display: block;
+  font-family: 'FontAwesome';
+  content: '\f073';
+  /* This is the calendar icon in FontAwesome */
+  width: 15px;
+  height: 20px;
+  position: absolute;
+  top: 12px;
+  right: 6px;
+  color: #fff;
+}
+
+.smooth-rhythm-showdance {
+  width: 50%;
+  float: left;
+}
+
+.events-column {
+  flex-direction: column;
+  display: flex;
+  float: left;
+}
+
+.price-column {
+  color: white;
+  flex-direction: column;
+  display: flex;
+  position: relative;
+}
+
+.select {
+  position: relative; }
+  .select .select-control {
+    font-size: 18px; 
+    height: 37px;
+    border-bottom: 2px solid #ff9900;
+    width: 100%;
+    color: rgb(230, 230, 230);
+    display: flex;
+    align-items: center;
+    cursor: pointer; }
+  .select .dropdown {
+    max-height: 200px;
+    overflow: auto;
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background: #000;
+    z-index: 9;
+    border: 1px solid #ff9900; 
+    opacity: .9; }
+    .select .dropdown li {
+      padding: 5px 10px; 
+      color: #fff; }
+      .select .dropdown li:hover {
+        background: #ff9900;
+        color: #fff; }
+
+.form-holder {
+  position: relative; }
+  .form-holder i {
+    position: absolute;
+    bottom: 7px;
+    right: 0;
+    font-size: 17px; }
+
+.form-control {
+  background-color: transparent;
+  height: 37px;
+  border: none;
+  border-bottom: 2px solid #ff9900;
+  width: 100%;
+  color: #fff; 
+  font-size: 18px; }
+  .form-control:focus {
+    border-color: #fff; }
+  .form-control::-webkit-input-placeholder {
+    font-style: italic; 
+    color: rgb(230, 230, 230); 
+    font-weight: normal; }
+  .form-control::-moz-placeholder {
+    font-style: italic;
+    color: rgb(230, 230, 230); 
+    font-weight: normal; }
+  .form-control:-ms-input-placeholder {
+    font-style: italic;
+    color: rgb(230, 230, 230); 
+    font-weight: normal; }
+  .form-control:-moz-placeholder {
+    font-style: italic;
+    color: rgb(230, 230, 230); 
+    font-weight: normal; }
+
+select.form-control {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  color: #999; }
+  select.form-control option[value=""][disabled] {
+    display: none; }
+
+textarea.form-control {
+  padding: 8px 0;
+  background: url("../images/textarea-bg.png") no-repeat right bottom 3px; }
+
+.actions {
+  position: absolute;
+  bottom: 55px;
+  right: 51px; }
+  .actions ul {
+    display: flex; }
+  .actions li a {
+    padding: 0;
+    border: none;
+    display: inline-flex;
+    height: 41px;
+    width: 135px;
+    align-items: center;
+    background: #ff9900;
+    font-family: "Muli-SemiBold";
+    color: #333;
+    cursor: pointer;
+    position: relative;
+    padding-left: 28px; }
+    .actions li a:before {
+      content: '\f301';
+      position: absolute;
+      top: 14px;
+      right: 28px;
+      font-family: Material-Design-Iconic-Font; }
+    .actions li a:hover {
+      background: #ff9900; }
+  .actions li:first-child a {
+    width: 144px;
+    padding-left: 48px; }
+    .actions li:first-child a:before {
+      content: '\f2ff';
+      position: absolute;
+      top: 14px;
+      left: 26px;
+      font-family: Material-Design-Iconic-Font; }
+  .actions li:nth-child(2) a, .actions li:last-child a {
+    margin-left: 20px; }
+  .actions li:last-child a {
+    width: 124px;
+    background: #ff9900;
+    color: #333; }
+    .actions li:last-child a:hover {
+      background: #ff9900; }
+    .actions li:last-child a:before {
+      content: '\f26b';
+      position: absolute;
+      top: 13px;
+      right: 28px;
+      font-family: Material-Design-Iconic-Font; }
+  .actions li[aria-disabled="true"] a {
+    opacity: .25;
+    transition: all 1s; }
+  .actions li[aria-disabled="false"] ~ li a {
+    background: #ff9900;
+    color: #333; }
+    .actions li[aria-disabled="false"] ~ li a:hover {
+      background: #ff9900; }
+
+.checkbox-tick label {
+  cursor: pointer;
+  display: inline-block;
+  padding-left: 23px;
+  position: relative; }
+  .checkbox-tick label.professional {
+    margin-right: 26px;
+    color:#ff9900;
+    font-size: 19px; }
+  .checkbox-tick label.amateur {
+    color:#ff9900;
+    font-size: 19px; }
+.checkbox-tick input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer; }
+.checkbox-tick input:checked ~ .checkmark {
+  background: #ff9900; }
+  .checkbox-tick input:checked ~ .checkmark:after {
+    display: block; }
+.checkbox-tick .checkmark {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 13px;
+  width: 13px;
+  border: 1px solid #ff9900;
+  border-radius: 50%;
+  font-family: Material-Design-Iconic-Font;
+  color: #fff;
+  font-size: 11px; }
+  .checkbox-tick .checkmark:after {
+    top: 0;
+    left: 2px;
+    position: absolute;
+    display: none;
+    content: '\f26b'; }
+
+.checkbox-circle {
+  position: relative;
+  padding-left: 23px;
+  margin-top: 41px;
+  width: 63%; }
+  .checkbox-circle.mt-6 {
+    margin-top: 6px; 
+    width: 49%;}
+  .checkbox-circle.mt-7 {
+    margin-top: 6px;
+    width: 100%;
+  }
+  .checkbox-circle label {
+    cursor: pointer;
+    color: #fff;
+    font-size: 13px;
+    line-height: 1.9;
+    transform: translateY(-5px); }
+    .checkbox-circle label a {
+      color: #fff; }
+      .checkbox-circle label a:hover {
+        color: #915700; }
+  .checkbox-circle input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer; }
+  .checkbox-circle input:checked ~ .checkmark:after {
+    display: block; }
+  .checkbox-circle .checkmark {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    border: 1px solid #ff9900; }
+    .checkbox-circle .checkmark:after {
+      content: "";
+      top: 2px;
+      left: 2px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ff9900;
+      position: absolute;
+      display: none; }
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+  .wizard {
+    max-width: 90%; }
+
+  .image-holder img {
+    height: 521px;
+    object-fit: cover; } }
+@media (max-width: 1000px) {
+
+  .image-holder {
+    width: 0%; }
+    .image-holder img {
+      width: 100%; }
+
+  .form-content {
+    width: 100%;
+    padding: 50px 20px 30px; }
+
+  .form-row {
+    display: block; }
+    .form-row .form-holder, .form-row .select {
+      width: 80%;
+      margin-right: 10%;
+      margin-left: 10%;
+      margin-bottom: 18px; }
+
+  .form-column1 {
+    width: 100%;
+    margin-right: 0px; 
+  }
+
+  .form-column2 {
+    width: 100%; 
+  }
+
+  .form-column3 {
+    width: 100%;
+    padding-top: 40px;
+    margin-left: 0px; 
+  }
+
+  .form-row .form-holder.w-100 {
+    width: 80%;
+  }
+
+  .form-row .select .form-holder {
+      width: 100%;
+      right: 10%;
+      margin-right: 0px; }
+
+  .checkbox-circle {
+    width: 100%; }
+
+  .button-placeholder {
+    height: 130px;
+  }
+
+  .wizard {
+    height: 90%; }
+    .wizard > .steps {
+      position: fixed;
+      top: 87%;
+      right: 50%;
+      transform: translateX(50%); 
+      padding-left: 500px;
+      padding-right: 500px;
+      padding-top: 15px;
+      padding-bottom: 300px;
+      display: inline-block;
+      background-color: #000;
+      backdrop-filter: blur(300px)}
+
+  .actions {
+    position: fixed;
+    top: 93%; 
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 2; }
+  }
+
+
+@media (max-width: 500px) {
+  h3 {
+    font-family: "Muli-SemiBold";
+    font-size: 25px;
+    color: #ff9900;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    padding: 5px 5px;
+    display: inline-block;
+    border: 1px solid #dad8e4;}
+}
+
+.latin-ballroom-nightclub {
+  width: 100%;
+}
+
+.smooth-rhythm-showdance {
+  width: 100%;
+}
+
+@media (max-width: 362px) {
+  .form-header {
+    padding: 0px;
+  }
+
+  h3 {
+    font-family: "Muli-SemiBold";
+    font-size: 26px;
+    color: #ff9900;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    padding: 0px;
+    display: inline-block;
+    border: 1px solid #dad8e4;}
+}
+
+
+/*# sourceMappingURL=style.css.map */
+/* Base Color ff9900
+   Hover Color 915700 */
