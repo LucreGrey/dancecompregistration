@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+
 	http.HandleFunc("/loginpage/", backend.ResourceHandler)
 	http.HandleFunc("/", backend.HomeHandler)
 
