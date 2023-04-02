@@ -1,4 +1,5 @@
 function customize(attr) {
+    console.log(attr.innerText)
     var innerText = attr.innerText;
     if (innerText = "Prestige Dancesport") {
         document.getElementById("image-logo").src = "images/PrestigeLogo2.png";
