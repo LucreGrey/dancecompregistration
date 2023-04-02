@@ -5,3 +5,7 @@ type UpdateEvents struct {
 	FStatus string `json:"followstatus"`
 	CompId  string `json:"compid"`
 }
+
+type CompetitionSelection struct {
+	CompetitionName string `json:"competitionname"`
+}

@@ -3,8 +3,19 @@ function filterEvents() {
     console.log("Filter Events Called")
     var leadStatus
     var followStatus
-    var competitionselection = document.getElementById("competition-select");
-    var compid = competitionselection.option[competitionselection.selectedIndex].value;
+    var competitionselection = document.getElementById("competition-select").innerText;
+    var compid
+    $.ajax({
+        url: "/api/getcompid",
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: JSON.stringify({"competitionname": competitionselection}),
+        complete: function(data) {
+            var response = JSON.parse(data.responseText)
+            compid = response.compid;
+        }
+    });
     log.Println("CompID = " + compid)
     if (document.getElementById("leadPro").checked == true) {
         leadStatus = "pro"

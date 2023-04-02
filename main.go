@@ -13,6 +13,7 @@ func main() {
 
 	http.HandleFunc("/api/getevents", backend.GetEvents)
 	http.HandleFunc("/api/getcompetitions", backend.GetCompetitions)
+	http.HandleFunc("/api/getcompid", backend.GetCompID)
 
 	http.ListenAndServe(":8080", nil)
 }

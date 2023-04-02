@@ -43,6 +43,64 @@ func init() {
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
+func GetCompID(w http.ResponseWriter, r *http.Request) {
+	log.Println("Reached Get Comp ID")
+	decoder := json.NewDecoder(r.Body)
+	var req models.CompetitionSelection
+	err := decoder.Decode(&req)
+	if err != nil {
+		log.Println("Failed to parse lead and follow statuses")
+	}
+
+	// Open the db
+	connStr := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
+		host, port, user, password, dbname)
+
+	// Open a connection to the database
+	db, err := sql.Open("postgres", connStr)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer db.Close()
+
+	rows, err := db.Query("SELECT * FROM competitions WHERE name = $1", req.CompetitionName)
+	if err != nil {
+		log.Println("There was an error querying the db")
+		log.Println(err)
+	}
+	log.Println("Called DB")
+	defer rows.Close()
+
+	// creates placeholder of the sandbox
+	allCompetitions := make([]models.Competition, 0)
+
+	// we loop through the values of rows
+	for rows.Next() {
+		competition := models.Competition{}
+		err := rows.Scan(&competition.Id, &competition.Name, &competition.Year, &competition.ActiveReg)
+		if err != nil {
+			log.Println(err)
+			return
+		}
+		allCompetitions = append(allCompetitions, competition)
+	}
+
+	if err = rows.Err(); err != nil {
+		log.Println(err)
+		return
+	}
+
+	// loop and display the result in the browser
+	for _, event := range allCompetitions {
+		fmt.Println(event.Name)
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(allCompetitions)
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
 func GetCompetitions(w http.ResponseWriter, r *http.Request) {
 	log.Println("Reached Get Competitions")
 
