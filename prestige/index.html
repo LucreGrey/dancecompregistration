@@ -18,7 +18,7 @@
 		<div class="wrapper">
 			<!-- The video -->
 			<video autoplay muted loop id="myVideo">
-				<source src="./video/Detroit.mp4" type="video/mp4">
+				<source src="images/TM.JPG" id="bg-video" type="video/mp4">
 			</video>
             <form id="wizard">
         		<!-- SECTION 1 -->
@@ -26,14 +26,14 @@
                 <section>
                     <div class="inner">
 						<div class="image-holder">
-							<img src="images/PrestigeLogo2.png" alt="">
+							<img src="images/PrestigeLogo2.png" id="image-logo" alt="">
 						</div>
 						<div class="form-content" >
 							<div class="form-header">
 								<div class="select">
 									<div class="select">
 										<div class="form-holder">
-											<label>Pick which Competition</label><div class="select-control" id="competition"></div>
+											<label>Pick which Competition</label><div class="select-control" onchange="customize(this);" id="competition"></div>
 											<i class="zmdi zmdi-caret-down"></i>
 										</div>
 										<ul class="dropdown" id="competition-select">
