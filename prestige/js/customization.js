@@ -1,4 +1,4 @@
-var compSelector = document.querySelector('#myDiv');
+var compSelector = document.querySelector('#competition');
 
 var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
