@@ -1,6 +1,7 @@
 function updateWebsite(){
     var competition = document.getElementById("competition")
     var text = competition.options[competition.selectedIndex].text;
+    currentComp = text;
     if (text == "Prestige Dancesport 2023"){
         document.getElementById("image-logo1").src = "images/PrestigeLogo2.png";
         document.getElementById("image-logo2").src = "images/PrestigeLogo2.png";
