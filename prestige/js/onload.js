@@ -15,5 +15,6 @@ window.onload = function() {
         $(this).parent().prev().find('div').text(text);
     });
     let competition = document.getElementById("competition");
-    competition.addEventListener("DOMCharacterDataModified", updateWebsite())
+    var competitiontext = competition.firstChild;
+    competitiontext.addEventListener("DOMCharacterDataModified", updateWebsite(), false)
 }
