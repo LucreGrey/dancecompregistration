@@ -16,5 +16,5 @@ window.onload = function() {
     });
     let competition = document.getElementById("competition");
     var competitiontext = competition.firstChild;
-    competitiontext.addEventListener("DOMCharacterDataModified", updateWebsite(), false)
+    competitiontext.addEventListener("DOMCharacterDataModified", updateWebsite());
 }
