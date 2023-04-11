@@ -1,6 +1,6 @@
     function updateWebsite(){
         console.log("Update Website Reached")
-        if (document.getElementById("competition").innerText == "Prestige Dancesport"){
+        if (document.getElementById("competition").value == "Prestige Dancesport"){
             console.log("Changed")
             document.getElementById("image-logo").src = "images/PrestigeLogo2.png";
             document.getElementById("bg-video").src = "video/Detroit.mp4"
