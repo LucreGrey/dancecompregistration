@@ -3,7 +3,7 @@
         var competition = document.getElementById("competition")
         var text = competition.options[competition.selectedIndex].text;
         console.log(text)
-        if (text == "Prestige Dancesport"){
+        if (text == "Prestige Dancesport 2023"){
             console.log("Changed")
             document.getElementById("image-logo").src = "images/PrestigeLogo2.png";
             document.getElementById("bg-video").src = "video/Detroit.mp4"
