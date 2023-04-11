@@ -1,18 +1,11 @@
-let observer = new MutationObserver(mutationRecords => {
-    alert(mutationRecords); // alert(the changes)
-  });
+competition.addEventListener("DOMCharacterDataModified", function (event) { 
+    console.log(competition.innerText)
+    if (competition.innerText == "Prestige Dancesport"){
+    document.getElementById("image-logo").src = "images/PrestigeLogo2.png";
+    document.getElementById("bg-video").src = "./video/Detroit.mp4"
+} else {
+    document.getElementById("image-logo").src = "dcr.png"
+    document.getElementById("bg-video").src = "./video/BGvid2.mp4"
+}
+  }, false);
 
-// observe everything except attributes
-observer.observe(competitionselect, {
-    childList: true, // observe direct children
-    subtree: true, // lower descendants too
-    characterDataOldValue: true, // pass old data to callback
-});
-
-//if (compSelector.innerHTML == "Prestige Dancesport"){
-//    document.getElementById("image-logo").src = "images/PrestigeLogo2.png";
-//    document.getElementById("bg-video").src = "./video/Detroit.mp4"
-//} else {
-//    document.getElementById("image-logo").src = "dcr.png"
-//    document.getElementById("bg-video").src = "./video/BGvid2.mp4"
-//}
