@@ -180,6 +180,8 @@ func GetEvents(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 	defer db.Close()
+	log.Println(status)
+	log.Println(req.CompId)
 
 	rows, err := db.Query("SELECT * FROM events WHERE dstatuses = $1 && compid = $2", status, req.CompId)
 	if err != nil {

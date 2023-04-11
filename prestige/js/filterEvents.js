@@ -5,18 +5,6 @@ function filterEvents() {
     var followStatus
     var competitionselection = currentComp;
     var compid = currentCompId;
-    console.log(compid)
-    $.ajax({
-        url: "/api/getcompid",
-        type: "POST",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        data: JSON.stringify({"competitionname": competitionselection}),
-        complete: function(data) {
-            var response = JSON.parse(data.responseText)
-            compid = response.compid;
-        }
-    });
     console.log("CompID = " + compid)
     if (document.getElementById("leadPro").checked == true) {
         leadStatus = "pro"
