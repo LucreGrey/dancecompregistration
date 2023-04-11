@@ -3,7 +3,7 @@ package models
 type UpdateEvents struct {
 	LStatus string `json:"leadstatus"`
 	FStatus string `json:"followstatus"`
-	CompId  int    `json:"compid"`
+	CompId  string `json:"compid"`
 }
 
 type CompetitionSelection struct {

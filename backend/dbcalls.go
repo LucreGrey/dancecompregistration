@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"strconv"
 
 	"github.com/lucregrey/dancecompregistration/models"
 
@@ -182,8 +183,12 @@ func GetEvents(w http.ResponseWriter, r *http.Request) {
 	defer db.Close()
 	log.Println(status)
 	log.Println(req.CompId)
+	compint, err := strconv.Atoi(req.CompId)
+	if err != nil {
+		log.Println("Failed to convert CompId to int")
+	}
 
-	rows, err := db.Query("SELECT * FROM events WHERE dstatuses = $1 && compid = $2", status, req.CompId)
+	rows, err := db.Query("SELECT * FROM events WHERE dstatuses = $1 && compid = $2", status, compint)
 	if err != nil {
 		log.Println("There was an error querying the db")
 		log.Println(err)
