@@ -3,7 +3,7 @@ function filterEvents() {
     console.log("Filter Events Called")
     var leadStatus
     var followStatus
-    var competitionselection = document.getElementById("competition-select").innerText;
+    var competitionselection = document.getElementById("competitionselect").innerText;
     var compid
     $.ajax({
         url: "/api/getcompid",
