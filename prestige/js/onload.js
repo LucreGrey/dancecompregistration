@@ -14,7 +14,4 @@ window.onload = function() {
         var text = $(this).attr('rel');
         $(this).parent().prev().find('div').text(text);
     });
-    let competition = document.getElementById("competition");
-    var competitiontext = competition.firstChild;
-    competitiontext.addEventListener("DOMCharacterDataModified", updateWebsite());
 }
