@@ -6,7 +6,7 @@
             document.getElementById("bg-video").src = "./video/Detroit.mp4"
         } else {
             console.log("Not Changed")
-            document.getElementById("image-logo").src = "dcr.png"
+            document.getElementById("image-logo").src = "dcrlogo.png"
             document.getElementById("bg-video").src = "./video/BGvid2.mp4"
         }
     }
