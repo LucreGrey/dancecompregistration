@@ -1,9 +1,6 @@
 let competition = document.getElementById("competition");
 console.log(competition.innerText)
-competition.addEventListener("DOMCharacterDataModified", updateSite); 
-
-function updateSite(e){ 
-    console.log(e)
+competition.addEventListener("DOMCharacterDataModified", function(event) {
     console.log(competition.innerText)
     if (document.getElementById("competition").innerText == "Prestige Dancesport"){
         console.log("Changed")
@@ -14,5 +11,7 @@ function updateSite(e){
         document.getElementById("image-logo").src = "dcr.png"
         document.getElementById("bg-video").src = "./video/BGvid2.mp4"
     }
-  }
+}, false); 
+
+
 
