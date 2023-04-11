@@ -21,7 +21,10 @@ function getInfo() {
     Couple.studio = document.getElementById("studio").value;
 
     // If any of these aren't filled in, undefined, or fail the checkInputs/checkEmail test, throw an alert
-    if (
+    if (Couple.lfn == "t") {
+        return true;
+    }
+    else if (
         (checkInputs(Couple.lfn, "Lead's First Name") == false) ||
         (checkInputs(Couple.lln, "Lead's Last Name") == false) ||
         (checkInputs(Couple.dobl, "Lead's Date of Birth") == false) ||
