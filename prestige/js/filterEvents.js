@@ -4,7 +4,8 @@ function filterEvents() {
     var leadStatus
     var followStatus
     var competitionselection = currentComp;
-    var compid
+    var compid = currentCompId;
+    console.log(compid)
     $.ajax({
         url: "/api/getcompid",
         type: "POST",
