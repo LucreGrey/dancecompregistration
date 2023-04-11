@@ -1,3 +1,4 @@
+competition = document.getElementById("competition");
 competition.addEventListener("DOMCharacterDataModified", function () { 
     console.log(document.getElementById("competition").innerText)
     if (document.getElementById("competition").innerText == "Prestige Dancesport"){
