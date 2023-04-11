@@ -1,14 +1,18 @@
-var compSelector = document.querySelector('#competition');
+let observer = new MutationObserver(mutationRecords => {
+    alert(mutationRecords); // alert(the changes)
+  });
 
-var observer = new MutationObserver(function(mutations){
-    mutations.forEach(function(mutation){
-        console.log(mutation.type); // <- It always detects changes
-        if (compSelector.innerHTML == "Prestige Dancesport"){
-            document.getElementById("image-logo").src = "images/PrestigeLogo2.png";
-            document.getElementById("bg-video").src = "./video/Detroit.mp4"
-        } else {
-            document.getElementById("image-logo").src = "dcr.png"
-            document.getElementById("bg-video").src = "./video/BGvid2.mp4"
-        }
-    });    
+// observe everything except attributes
+observer.observe(competition, {
+    childList: true, // observe direct children
+    subtree: true, // lower descendants too
+    characterDataOldValue: true, // pass old data to callback
 });
+
+//if (compSelector.innerHTML == "Prestige Dancesport"){
+//    document.getElementById("image-logo").src = "images/PrestigeLogo2.png";
+//    document.getElementById("bg-video").src = "./video/Detroit.mp4"
+//} else {
+//    document.getElementById("image-logo").src = "dcr.png"
+//    document.getElementById("bg-video").src = "./video/BGvid2.mp4"
+//}
