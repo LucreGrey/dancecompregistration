@@ -188,7 +188,7 @@ func GetEvents(w http.ResponseWriter, r *http.Request) {
 		log.Println("Failed to convert CompId to int")
 	}
 
-	rows, err := db.Query("SELECT * FROM events WHERE dstatuses = $1 && compid = $2", status, compint)
+	rows, err := db.Query("SELECT * FROM events WHERE dstatuses = $1 AND compid = $2", status, compint)
 	if err != nil {
 		log.Println("There was an error querying the db")
 		log.Println(err)
