@@ -1,7 +1,7 @@
     function updateWebsite(){
         console.log("Update Website Reached")
         var competition = document.getElementById("competition")
-        var text = competition.option[competition.selectedIndex].text;
+        var text = competition.options[competition.selectedIndex].text;
         console.log(text)
         if (text == "Prestige Dancesport"){
             console.log("Changed")
