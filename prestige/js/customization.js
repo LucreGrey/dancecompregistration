@@ -1,6 +1,6 @@
-competition.addEventListener("DOMCharacterDataModified", function (event) { 
-    console.log(competition.innerText)
-    if (competition.innerText == "Prestige Dancesport"){
+competition.addEventListener("DOMCharacterDataModified", function () { 
+    console.log(document.getElementById("competition").innerText)
+    if (document.getElementById("competition").innerText == "Prestige Dancesport"){
     document.getElementById("image-logo").src = "images/PrestigeLogo2.png";
     document.getElementById("bg-video").src = "./video/Detroit.mp4"
 } else {
