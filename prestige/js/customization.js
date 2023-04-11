@@ -3,7 +3,7 @@ let observer = new MutationObserver(mutationRecords => {
   });
 
 // observe everything except attributes
-observer.observe(competition, {
+observer.observe(competition-select, {
     childList: true, // observe direct children
     subtree: true, // lower descendants too
     characterDataOldValue: true, // pass old data to callback
