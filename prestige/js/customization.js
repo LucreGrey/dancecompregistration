@@ -3,10 +3,10 @@
         if (document.getElementById("competition").innerText == "Prestige Dancesport"){
             console.log("Changed")
             document.getElementById("image-logo").src = "images/PrestigeLogo2.png";
-            document.getElementById("bg-video").src = "./video/Detroit.mp4"
+            document.getElementById("bg-video").src = "video/Detroit.mp4"
         } else {
             console.log("Not Changed")
-            document.getElementById("image-logo").src = "dcrlogo.png"
-            document.getElementById("bg-video").src = "./video/BGvid2.mp4"
+            document.getElementById("image-logo").src = "images/dcrlogo.png"
+            document.getElementById("bg-video").src = "video/BGvid2.mp4"
         }
     }
