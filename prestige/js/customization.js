@@ -8,7 +8,7 @@ var observer = new MutationObserver(function(mutations){
             document.getElementById("bg-video").src = "./video/Detroit.mp4"
         } else {
             document.getElementById("image-logo").src = "dcr.png"
-            document.getElementById("bg-video").src = ""
+            document.getElementById("bg-video").src = "./video/BGvid.mp4"
         }
     });    
 });
