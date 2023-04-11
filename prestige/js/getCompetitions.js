@@ -5,7 +5,9 @@ $.ajax({
     complete: function(data,error) {
         var response = JSON.parse(data.responseText)
         for (i in response) {
-            $("#competition").append('<option name="' + response[i].Name + '" value="' + response[i].Id + '">' + response[i].Name + " " + response[i].Year + '</li>');
+            year = (response[i].Year)
+            yearFour = year.slice(0, 4);
+            $("#competition").append('<option name="' + response[i].Name + '" value="' + response[i].Id + '">' + response[i].Name + " " + yearFour + '</li>');
         }
     }
 });
