@@ -2,7 +2,7 @@ function updateWebsite(){
     var competition = document.getElementById("competition")
     var text = competition.options[competition.selectedIndex].text;
     currentComp = text;
-    currentCompID = document.getElementById("competition").value;
+    currentCompId = document.getElementById("competition").value;
     console.log(currentComp)
     console.log(currentCompID)
     if (text == "Prestige Dancesport 2023"){

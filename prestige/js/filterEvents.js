@@ -17,7 +17,7 @@ function filterEvents() {
             compid = response.compid;
         }
     });
-    log.Println("CompID = " + compid)
+    console.log("CompID = " + compid)
     if (document.getElementById("leadPro").checked == true) {
         leadStatus = "pro"
     } else { leadStatus = "am"}
