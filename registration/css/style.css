@@ -13,8 +13,7 @@ body {
   font-family: "Muli-Regular";
   font-size: 15px;
   color: #999;
-  margin: 0; 
-  cursor: default;}
+  margin: 0; }
 
 :focus {
   outline: none; }
@@ -48,13 +47,11 @@ img {
   background: #f9f6f1;
   display: flex;
   align-items: center;
-  justify-content: center; 
-  cursor: default;}
+  justify-content: center; }
 
 .wizard {
   width: 90%;
-  position: absolute; 
-  cursor: default;}
+  position: absolute; }
 
 .wizard > .steps {
   position: absolute;
