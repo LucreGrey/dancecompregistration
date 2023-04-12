@@ -260,7 +260,6 @@ input[type="date"]:before {
     overflow: auto;
     display: none;
     position: absolute;
-    color: rgb(230, 230, 230);
     top: 100%;
     width: 100%;
     background: #000;
@@ -269,17 +268,17 @@ input[type="date"]:before {
     opacity: .9; }
     .select .dropdown li {
       padding: 5px 10px; 
-      color: rgba(230, 230, 230, 0); }
+      color: rgba(255, 255, 255, 0); }
       .select .dropdown li:hover {
         background: #ff9900;
-        color: rgba(230, 230, 230, 0); }
+        color: rgba(255, 255, 255, 0); }
   .select .option {
     font-size: 18px; 
     height: 37px;
     border-bottom: 2px solid #ff9900;
     width: 100%;
     color: rgb(230, 230, 230);
-    background: #000;
+    background: rgba(0, 0, 0, 0);
     display: flex;
     align-items: center;
     cursor: pointer; }
