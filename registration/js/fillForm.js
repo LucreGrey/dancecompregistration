@@ -1,4 +1,5 @@
 function getInfo() {
+
     Couple.lfn = document.getElementById("lfn").value;
     Couple.lln = document.getElementById("lln").value;
     Couple.dobl = document.getElementById("dobl").value;
@@ -23,8 +24,12 @@ function getInfo() {
     // If any of these aren't filled in, undefined, or fail the checkInputs/checkEmail test, throw an alert
     if (Couple.lfn == "t") {
         return true;
-    }
-    else if (
+    } else if (
+        (currentCompId == -1) ||
+        (currentComp == "") ) {
+            alert("Please Select a competition to register for");
+            return false;
+    } else if (
         (checkInputs(Couple.lfn, "Lead's First Name") == false) ||
         (checkInputs(Couple.lln, "Lead's Last Name") == false) ||
         (checkInputs(Couple.dobl, "Lead's Date of Birth") == false) ||
