@@ -260,6 +260,7 @@ input[type="date"]:before {
     overflow: auto;
     display: none;
     position: absolute;
+    color: rgb(230, 230, 230);
     top: 100%;
     width: 100%;
     background: #000;
@@ -272,16 +273,6 @@ input[type="date"]:before {
       .select .dropdown li:hover {
         background: #ff9900;
         color: rgba(255, 255, 255, 0); }
-  .select .option {
-    font-size: 18px; 
-    height: 37px;
-    border-bottom: 2px solid #ff9900;
-    width: 100%;
-    color: rgb(230, 230, 230);
-    background: rgba(0, 0, 0, 0);
-    display: flex;
-    align-items: center;
-    cursor: pointer; }
 
 .form-holder {
   position: relative; }
