@@ -7,7 +7,7 @@ $.ajax({
         for (i in response) {
             year = (response[i].Year)
             yearFour = year.slice(0, 4);
-            $("#competition").append('<option name="' + response[i].Name + '" class="select-control" value="' + response[i].Id + '">' + response[i].Name + " " + yearFour + '</li>');
+            $("#competition").append('<option name="' + response[i].Name + '" class="dropdown" value="' + response[i].Id + '">' + response[i].Name + " " + yearFour + '</li>');
         }
     }
 });
