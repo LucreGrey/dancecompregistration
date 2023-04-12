@@ -9,6 +9,9 @@ window.onload = function() {
     $('.select .select-control').click(function(){
         $(this).parent().next().toggle();
     });
+    $('.select .state-control').click(function(){
+        $(this).parent().next().toggle();
+    });
     $('.select .dropdown li').click(function(){
         $(this).parent().toggle();
         var text = $(this).attr('rel');
