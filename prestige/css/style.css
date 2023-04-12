@@ -256,17 +256,15 @@ input[type="date"]:before {
     align-items: center;
     cursor: pointer; }
   .select .state-control {
-    max-height: 200px;
-    overflow: auto;
-    display: none;
-    position: absolute;
-    top: 100%;
+    font-size: 18px; 
+    height: 37px;
+    border-bottom: 2px solid #ff9900;
     width: 100%;
-    background: rgba(255, 0, 0, 0.2);
-    z-index: 9;
-    border: 1px solid #ff9900; 
-    opacity: .9; 
-  }
+    color: rgb(255, 255, 255);
+    background: #000;
+    display: flex;
+    align-items: center;
+    cursor: pointer; }
   .select .dropdown {
     max-height: 200px;
     overflow: auto;
