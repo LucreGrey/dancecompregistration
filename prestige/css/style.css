@@ -255,6 +255,18 @@ input[type="date"]:before {
     display: flex;
     align-items: center;
     cursor: pointer; }
+  .select .state-control {
+    max-height: 200px;
+    overflow: auto;
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background: rgba(255, 0, 0, 0.2);
+    z-index: 9;
+    border: 1px solid #ff9900; 
+    opacity: .9; 
+  }
   .select .dropdown {
     max-height: 200px;
     overflow: auto;
@@ -262,7 +274,7 @@ input[type="date"]:before {
     position: absolute;
     top: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, .2);
     z-index: 9;
     border: 1px solid #ff9900; 
     opacity: .9; }
