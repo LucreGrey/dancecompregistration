@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Dance Comp Registration</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" href="./css/video.css">
+
+
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- The video -->
+			<video autoplay muted loop id="myVideo">
+				<source src="video/BGvid2.mp4" id="bg-video" type="video/mp4">
+			</video>
+
+            <form id="wizard">
+        		<!-- SECTION 1 -->
+                <h2></h2>
+                <section>
+                    <div class="inner">
+						<div class="image-holder">
+							<img src="images/dcrlogo.png" id="image-logo1" alt="">
+						</div>
+						<div class="form-content" >
+							<div class="form-header">
+								<div class="select">
+									<div class="form-holder">
+										<label>Competition accepting registration: </label>
+										<select class="select-control" id="competition" onchange="updateWebsite()">
+											<option value="" disabled hidden selected>Choose a competition</option>
+										</select>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-row">
+								<div class="form-column1">
+									<!-- Leader's Information -->
+									<div class="h2Other">Leader's Information</div>
+									<div class="form-row">
+										<div class="form-holder">
+											<label>First Name</label><input type="text" id="lfn" value="" class="form-control">
+										</div>
+										<div class="form-holder">
+											<label>Last Name</label><input type="text" id="lln" value="" class="form-control">
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-holder">
+											<label>Date of Birth (M/D/Y)</label><input type="date" id="dobl" value="" onchange="getLeadAge()" class="form-control">
+										</div>
+										<div class="form-holder">
+											<label>Mobile Phone</label><input type="text" id="lmp" value="" class="form-control">
+										</div>
+										<div class="form-holder">
+											<label>NDCA Number</label><input type="number" id="lndca" value="" class="form-control">
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-holder">
+											<label>Email Address</label><input type="email" id="lemail" value="" class="form-control">
+										</div>
+										<div class="form-holder" style="align-self: flex-end; transform: translateY(4px);">
+											<div class="checkbox-tick">
+												<label class="professional">
+													<input type="radio" name="lead-status" id="leadPro" value="professional" checked> Professional<br>
+													<span class="checkmark"></span>
+												</label>
+												<label class="amateur">
+													<input type="radio" name="lead-status" id="leadAm" value="amateur"> Amateur<br>
+													<span class="checkmark"></span>
+												</label>
+											</div>
+										</div>
+								
+									</div>
+								</div>
+								<div class="form-column2">
+									<!-- Follower's Information-->
+									<div class="h2Other">Follow's Information</div>
+									<div class="form-row">
+										<div class="form-holder">
+											<label>First Name</label><input type="text" id="ffn" value="" class="form-control">
+										</div>
+										<div class="form-holder">
+											<label>Last Name</label><input type="text" id="fln" value="" class="form-control">
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-holder">
+											<label>Date of Birth (M/D/Y)</label><input type="date" id="dobf" value="" onchange="getFollowAge()" class="form-control">
+										</div>
+										<div class="form-holder">
+											<label>Mobile Phone</label><input type="text" id="fmp" value="" class="form-control">
+										</div>
+										<div class="form-holder">
+											<label>NDCA Number</label><input type="number" id="fndca" value="" class="form-control">
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-holder">
+											<label>Email Address</label><input type="email" id="femail" value="" class="form-control">
+										</div>
+										<div class="form-holder" style="align-self: flex-end; transform: translateY(4px);">
+											<div class="checkbox-tick">
+												<label class="professional">
+													<input type="radio" name="follow-status" id="followPro" value="Professional" checked> Professional<br>
+													<span class="checkmark"></span>
+												</label>
+												<label class="amateur">
+													<input type="radio" name="follow-status" id="followAm" value="Amateur"> Amateur<br>
+													<span class="checkmark"></span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+
+							<div class="form-column3">
+								<div class="form-row">
+									<div class="form-holder w-100">
+										<label>Address</label><input type="text" id="addr" value="" class="form-control">
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder">
+										<label>City</label><input type="text" id="city" value="" class="form-control">
+									</div>
+									<div class="form-holder">
+										<label>Zip Code</label><input type="text" id="zip" value="" class="form-control">
+									</div>
+								</div>
+
+								<div class="form-row">
+									<div class="select">
+										<div class="form-holder">
+											<label>State</label><div class="state-control" id="state"></div>
+											<i class="zmdi zmdi-caret-down"></i>
+										</div>
+										<ul class="dropdown" id="state-select">
+										</ul>
+									</div>
+									<div class="form-holder">
+										<label>Country</label><input type="text" id="country" value="" class="form-control">
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder">
+										<label>Studio (Put Independent if not with a studio)</label><input type="text" id="studio" value="" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="button-placeholder">
+								<!-- Place holder for buttons-->
+							</div>
+						</div>
+					</div>
+                </section>
+
+                <!-- SECTION 2 -->
+                <h2></h2>
+                <section>
+                    <div class="inner">
+						<div class="image-holder">
+							<img src="images/dcrlogo.png" id="image-logo2" alt="">
+						</div>
+						<div class="form-content">
+							<div class="form-header">
+								<h3 id="Title2">Prestige Dancesport Registration</h3>
+							</div>
+							<p>If you don't see the correct events then go back and make sure you picked the right Pro vs Am statuses on page 1</p>
+							<div id="latin-ballroom-nightclub" class="latin-ballroom-nightclub">
+								<div id="lbn-column" class="events-column"></div>
+								<div id="lbn-price-column" class="price-column"></div>
+							</div>
+							<div id="smooth-rhythm-showdance" class="smooth-rhythm-showdance">
+								<div id="srs-column" class="events-column"></div>
+								<div id="srs-price-column" class="price-column"></div>
+							</div>
+						</div>
+					</div>
+                </section>
+
+				<!-- SECTION 3 -->
+                <h2></h2>
+                <section>
+                    <div class="inner">
+						<div class="image-holder">
+							<img src="images/dcrlogo.png" id="image-logo3" alt="">
+						</div>
+						<div class="form-content">
+							<div class="form-header">
+								<h3 id="Title3">Prestige Dancesport Registration</h3>
+							</div>
+							<div class="form-row">
+								<div class="form-holder w-100">
+									<div class="h2Other">Leader's Information</div>
+									<div>Name: <label id="formlfn">Tristan</label> <label id="formlln">Placeholder</label></div>
+									<div>DOB: <label id="formdobl"></label></div>
+									<div>Phone: <label id="formlmp"></label></div>
+									<div>NDCA #: <label id="formlndca"></label></div>
+									<div>Email: <label id="formlemail"></label></div>
+								</div>
+								<div class="form-holder w-100">
+									<div class="h2Other">Follower's Information</div>
+									<div>Name: <label id="formffn">Partner</label> <label id="formfln">Last Name</label></div>
+									<div>DOB: <label id="formdobf"></label></div>
+									<div>Phone: <label id="formfmp"></label></div>
+									<div>NDCA #: <label id="formfndca"></label></div>
+									<div>Email: <label id="formfemail"></label></div>
+								</div>
+								<div class="form-holder w-100">
+									<div class="h2Other">Couple Info</div>
+									<div>Address: <label id="formaddr"></label></div>
+									<div>City: <label id="formcity"></label></div>
+									<div>State: <label id="formstate"></label></div>
+									<div>Country: <label id="formcountry"></label></div>
+									<div>Zip Code: <label id="formzip"></label></div>
+									<div>Studio: <label id="formstudio"></label></div>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="h2Other" id="formEvents">Events:</div>
+							</div>
+							<div class="button-placeholder">
+								<!-- Place holder for buttons-->
+							</div>
+						</div>
+					</div>
+                </section>
+            </form>
+		</div>
+
+		<!-- JQUERY-->
+		<script src="js/jquery-3.3.1.min.js"></script>
+
+		<!-- JQUERY STEP -->
+		<script src="js/jquery.steps.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/onload.js"></script>
+		<script src="js/customization.js"></script>
+
+		<!-- JS Functions -->
+		<script src="js/getCompetitions.js"></script>
+		<script src="js/fillLists.js"></script>
+		<script src="js/checkInputs.js"></script>
+		<script src="js/filterEvents.js"></script>
+		<script src="js/fillForm.js"></script>
+		<script src="js/getDate.js"></script>
+
+		<script>
+			var Couple = new Object();
+			var currentComp = "";
+			var currentCompId = -1;
+		</script>
+
+</body>
+</html>
