@@ -269,7 +269,7 @@ input[type="date"]:before {
     opacity: .9; }
     .select .dropdown li {
       padding: 5px 10px; 
-      color: rgba(255, 255, 255, 0); }
+      color: rgba(230, 230, 230, 0); }
       .select .dropdown li:hover {
         background: #ff9900;
         color: rgba(255, 255, 255, 0); }
