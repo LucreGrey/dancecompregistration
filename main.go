@@ -9,7 +9,9 @@ import (
 func main() {
 	http.HandleFunc("/prestige/", backend.ResourceHandler)
 	http.HandleFunc("/loginpage/", backend.ResourceHandler)
-	http.HandleFunc("/", backend.HomeHandler)
+
+	fs := http.FileServer(http.Dir("./registration"))
+	http.Handle("/", fs)
 
 	http.HandleFunc("/api/getevents", backend.GetEvents)
 	http.HandleFunc("/api/getcompetitions", backend.GetCompetitions)
