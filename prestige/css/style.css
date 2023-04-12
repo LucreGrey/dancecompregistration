@@ -262,14 +262,14 @@ input[type="date"]:before {
     position: absolute;
     top: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, .2);
+    background: rgba(0, 0, 0, 0);
     z-index: 9;
     border: 1px solid #ff9900; 
     opacity: .9; }
     .select .dropdown li {
       padding: 5px 10px; 
       color: rgb(255, 255, 255); 
-      background: rgba(0, 0, 0, .2); }
+      background: #000; }
       .select .dropdown li:hover {
         background: #ff9900;
         color: rgb(255, 255, 255); }
