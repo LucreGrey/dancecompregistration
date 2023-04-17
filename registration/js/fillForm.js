@@ -59,6 +59,8 @@ function getInfo() {
 function getSelectedEvents() {
     selectedEvents = [];
     $("input:checkbox[name=eventSelect]:checked").each(function(){
+        console.log("Attempting push to selectedEvents")
+        console.log($(this))
         selectedEvents.push($(this).text());
     });
     JSON.stringify(selectedEvents)
