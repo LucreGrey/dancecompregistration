@@ -56,10 +56,13 @@ function getInfo() {
     return true;
 }
 
-function checkEvents() {
-    var checkedBoxes = document.querySelectorAll('input[name=selectedEvents]:checked');
-    console.log(checkedBoxes);
-    console.log(checkedBoxes[0].innerText)
+function getSelectedEvents() {
+    selectedEvents = [];
+    $("input:checkbox[name=eventSelect]:checked").each(function(){
+        selectedEvents.push($(this).val());
+    });
+    JSON.stringify(selectedEvents)
+    console.log(selectedEvents)
 }
 
 function fillForm() {
@@ -83,4 +86,16 @@ function fillForm() {
     document.getElementById("formstate").innerText = Couple.state;
     document.getElementById("formcountry").innerText = Couple.country;
     document.getElementById("formstudio").innerText = Couple.studio;
+    getSelectedEvents();
+    var count = 0;
+    for (events in selectedEvents) {
+        if (count == 0) {
+            $("#listSelectedEvents").append('<div class="h2Other">' + stylesList[style] + '</div>')
+            $("#listSelectedEvents").append('<div class="form-row"></div>')
+        }
+        if (response[i].Style==stylesList[style]) {
+            $("#listSelectedEvents").append('<div><label name="eventSelect" id="' + response[i].Name + '">  ' + response[i].Name + ' (' + response[i].Dances + ')</label></div>')
+        }
+        count++;
+    }
 }

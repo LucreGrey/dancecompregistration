@@ -15,6 +15,7 @@ type Event struct {
 	Age       string
 	Price     int
 	Style     string
+	Dances    string
 }
 
 type Competitor struct {

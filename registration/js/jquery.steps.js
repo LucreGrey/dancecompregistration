@@ -812,7 +812,7 @@ function paginationClickHandler(event)
                 fillForm();
                 goToNextStep(wizard, options, state);
                 break;
-            }
+            } 
 
         case "previous":
             goToPreviousStep(wizard, options, state);

@@ -202,7 +202,7 @@ func GetEvents(w http.ResponseWriter, r *http.Request) {
 	// we loop through the values of rows
 	for rows.Next() {
 		event := models.Event{}
-		err := rows.Scan(&event.Id, &event.CompId, &event.DStatuses, &event.Name, &event.Age, &event.Price, &event.Style)
+		err := rows.Scan(&event.Id, &event.CompId, &event.DStatuses, &event.Name, &event.Age, &event.Price, &event.Style, &event.Dances)
 		if err != nil {
 			log.Println(err)
 			http.Error(w, http.StatusText(500), 500)
