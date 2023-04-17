@@ -89,6 +89,7 @@ function fillForm() {
     document.getElementById("formcountry").innerText = Couple.country;
     document.getElementById("formstudio").innerText = Couple.studio;
     getSelectedEvents();
+    document.getElementById("listSelectedEvents").innerHTML = "";
     for (i in selectedEvents) {
         $("#listSelectedEvents").append('<li><label>' + selectedEvents[i] + '</label></li>')
     }    
