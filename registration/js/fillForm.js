@@ -87,15 +87,7 @@ function fillForm() {
     document.getElementById("formcountry").innerText = Couple.country;
     document.getElementById("formstudio").innerText = Couple.studio;
     getSelectedEvents();
-    var count = 0;
-    for (events in selectedEvents) {
-        if (count == 0) {
-            $("#listSelectedEvents").append('<div class="h2Other">' + stylesList[style] + '</div>')
-            $("#listSelectedEvents").append('<div class="form-row"></div>')
-        }
-        if (response[i].Style==stylesList[style]) {
-            $("#listSelectedEvents").append('<div><label name="eventSelect" id="' + response[i].Name + '">  ' + response[i].Name + ' (' + response[i].Dances + ')</label></div>')
-        }
-        count++;
-    }
+    for (i in selectedEvents) {
+        $("#listSelectedEvents").append('<li><label>' + selectedEvents[i] + '</label></li>')
+    }    
 }

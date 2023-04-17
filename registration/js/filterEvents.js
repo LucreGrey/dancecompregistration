@@ -24,9 +24,6 @@ function filterEvents() {
             document.getElementById("lbn-price-column").innerHTML = "";
             document.getElementById("srs-column").innerHTML = "";
             document.getElementById("srs-price-column").innerHTML = "";
-
-
-            var stylesList = ["Latin", "Ballroom", "Smooth", "Rhythm", "Showdance"]
             
             // Both Pro Competitors
             if ((leadStatus == "pro") && (followStatus == "pro")) {
