@@ -802,6 +802,7 @@ function paginationClickHandler(event)
                 var checkInputs = getInfo();
                 console.log(checkInputs);
                 if (checkInputs != false) {
+                    selectedEvents = [];
                     filterEvents();
                     console.log("Filter Events Passed")
                     goToNextStep(wizard, options, state);
